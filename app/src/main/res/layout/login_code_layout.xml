@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/login_background"
+    android:padding="@dimen/activity_vertical_margin" >
+
+    <TableLayout
+        android:id="@+id/recoverLogin_layout"
+        android:layout_width="@dimen/recover_layout_width"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:background="@drawable/login_shape"
+        android:gravity="center"
+        android:paddingBottom="@dimen/login_layout_padding"
+        android:paddingTop="@dimen/login_layout_padding" >
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center" >
+
+            <TextView
+                style="@style/particulars_textview_style"
+                android:layout_width="170dp"
+                android:gravity="center"
+                android:padding="0dp"
+                android:text="@string/enter_login_code"
+                android:textColor="#FFF" >
+            </TextView>
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center" >
+
+            <EditText
+                android:id="@+id/loginCode"
+                style="@style/login_edittext_style"
+                android:layout_width="220dp"
+                android:gravity="center"
+                android:padding="0dp"
+                android:text="1234" >
+
+                <requestFocus />
+            </EditText>
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/small_margin"
+            android:gravity="center" >
+
+            <Button
+                android:id="@+id/login_code_button"
+                style="@style/buttons2_style"
+                android:layout_width="wrap_content"
+                android:layout_margin="@dimen/small_margin"
+                android:text="@string/login_button_text" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/small_margin"
+            android:gravity="center" >
+
+            <TextView
+                android:id="@+id/login_code_exit"
+                style="@style/login_textview_style"
+                android:layout_width="wrap_content"
+                android:gravity="center"
+                android:paddingRight="0dp"
+                android:text="@string/exit_text"
+                android:textColor="#FFF" />
+        </TableRow>
+    </TableLayout>
+
+    <View
+        android:id="@+id/view1"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:layout_above="@id/copyright_textView"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="10dp"
+        android:background="@color/dark_blue_color" />
+
+    <TextView
+        android:id="@+id/copyright_textView"
+        style="@style/particulars_textview_style"
+        android:layout_width="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginRight="26dp"
+        android:gravity="left"
+        android:text="@string/copyright"
+        android:textColor="@color/dark_blue_color" />
+
+    <ImageView
+        android:id="@+id/loginCodeBackIV"
+        android:layout_width="50dp"
+        android:layout_height="30dp"
+        android:layout_alignLeft="@+id/view1"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="24dp"
+        android:src="@drawable/back_click" />
+
+</RelativeLayout>

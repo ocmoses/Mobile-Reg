@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <LinearLayout
+        android:id="@+id/registerContributorLL"
+        style="@style/large_linearlayout_style" >
+
+        <RelativeLayout
+            android:id="@+id/topBar"
+            style="@style/topbar_relativelayout_style" >
+
+            <ImageView
+                android:id="@+id/fidelityHeadLogoIV"
+                style="@style/fidelity_headlogo_imageview_style" />
+
+            <LinearLayout
+                android:id="@+id/topMenu"
+                style="@style/topmenu_linearlayout_style"
+                android:layout_alignParentRight="true"
+                android:layout_alignTop="@+id/fidelityHeadLogoIV" >
+
+                <LinearLayout
+                    android:id="@+id/logoutLL"
+                    style="@style/logout_linearlayout_style" >
+
+                    <TextView
+                        android:id="@+id/loggedInAsTV"
+                        style="@style/logged_in_as_textview_style"
+                        android:text="Logged in as: John Doe" />
+
+                    <Button
+                        android:id="@+id/logoutButton"
+                        style="@style/logout_button_style"
+                        android:text="Logout" />
+                </LinearLayout>
+            </LinearLayout>
+        </RelativeLayout>
+
+        <LinearLayout
+            android:id="@+id/contributorListPanel"
+            style="@style/console_style" >
+
+            <LinearLayout
+                android:id="@+id/contributorList"
+                style="@style/left_tab_style" >
+
+                <ListView
+                    android:id="@+id/contributor_list"
+                    style="@style/leftlist_style" />
+            </LinearLayout>
+
+            <FrameLayout 
+                style="@style/right_tab_style"
+                android:background="@drawable/dark_blue_border"
+                android:paddingTop="0dp" >
+
+                <ScrollView
+                    android:id="@+id/right_scrollview"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" >
+
+                    <FrameLayout
+                        android:id="@+id/fragment_holder"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+                </ScrollView>
+<!-- 
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" >
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="30dp"
+                        android:layout_alignParentTop="true"
+                        android:src="@drawable/top_shadow"
+                        android:adjustViewBounds="true" />
+
+                    <ImageView
+                        android:id="@+id/bottomShadow"
+                        android:layout_width="match_parent"
+                        android:layout_height="30dp"
+                        android:layout_alignParentBottom="true"
+                        android:src="@drawable/bottom_shadow"
+                        android:adjustViewBounds="true" />
+                </RelativeLayout>  -->
+            </FrameLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/employerLinearLayout"
+        android:layout_width="600dp"
+        android:layout_height="570dp"
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="170dp"
+        android:background="@drawable/employer_list_shape"
+        android:orientation="vertical"
+        android:visibility="invisible" >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/left_list_background" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_gravity="center"
+                android:paddingBottom="20dp"
+                android:text="Pick employer"
+                android:textColor="#fff"
+                
+                android:textSize="@dimen/small_text_size"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:id="@+id/cancelEmployerList"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_alignParentRight="true"
+                android:src="@drawable/cancel_click" />
+        </RelativeLayout>
+
+        <ListView
+            android:id="@+id/employerListView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="left" >
+        </ListView>
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/signatureRL"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/transparent_black_color"
+        android:padding="20dp"
+        android:visibility="invisible" >
+
+        <LinearLayout
+            android:layout_width="375dp"
+            android:layout_height="450dp"
+            android:layout_centerInParent="true"
+            android:layout_gravity="center"
+            android:background="@drawable/sign_signature_shape"
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/signHereTV"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp"
+                android:gravity="center"
+                android:text="@string/sign_here"
+                android:textSize="50dp"
+                android:textColor="#FFF"
+                android:textStyle="bold" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="3dp"
+                android:layout_marginBottom="20dp"
+                android:background="#FFF" />
+
+            <com.sigmapensions.sigmamobileapp.SignatureView
+                android:id="@+id/signature_view"
+                android:layout_width="match_parent"
+                android:layout_height="200dp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:padding="20dp" >
+
+                <Button
+                    android:id="@+id/SAclear"
+                    style="@style/buttons2_style"
+                    android:layout_marginRight="20dp"
+                    android:gravity="center"
+                    android:text="@string/clear" />
+
+                <Button
+                    android:id="@+id/SAsubmit"
+                    style="@style/buttons2_style"
+                    android:layout_width="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:gravity="center"
+                    android:text="@string/submit" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/cancelImage"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
+            android:src="@drawable/cancel_click" />
+    </RelativeLayout>
+
+</FrameLayout>

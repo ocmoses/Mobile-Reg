@@ -1,0 +1,479 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/responsePageLayout"
+    style="@style/large_linearlayout_style" >
+
+    <RelativeLayout
+        android:id="@+id/topResponseConsole"
+        style="@style/topbar_relativelayout_style" >
+
+        <ImageView
+            android:id="@+id/fidelityHeadLogoIV"
+            style="@style/fidelity_headlogo_imageview_style" />
+
+        <LinearLayout
+            android:id="@+id/topMenu"
+            style="@style/topmenu_linearlayout_style"
+            android:layout_alignParentRight="true"
+            android:layout_alignTop="@+id/fidelityHeadLogoIV" >
+
+            <LinearLayout
+                android:id="@+id/logoutLL"
+                style="@style/logout_linearlayout_style" >
+
+                <TextView
+                    android:id="@+id/loggedInAsTV"
+                    style="@style/logged_in_as_textview_style"
+                    android:text="Logged in as: John Doe" />
+
+                <Button
+                    android:id="@+id/logoutButton"
+                    style="@style/logout_button_style"
+                    android:text="Logout" />
+            </LinearLayout>
+        </LinearLayout>
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/responseListPanel"
+        style="@style/console_style" >
+
+        <LinearLayout
+            android:id="@+id/responseList"
+            style="@style/left_tab_style" >
+
+            <ListView
+                android:id="@+id/response_list"
+                style="@style/leftlist_style" />
+        </LinearLayout>
+
+        <FrameLayout
+            style="@style/right_tab_style"
+            android:background="@drawable/dark_blue_border"
+            android:paddingTop="0dp" >
+
+            <ScrollView
+                android:id="@+id/right_scrollview"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" >
+
+                <FrameLayout
+                    android:id="@+id/responseLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="20dp" >
+
+                    <RelativeLayout
+                        android:id="@+id/pinResponseFromPencom"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_below="@+id/imageView1"
+                        android:background="@drawable/white_list_background"
+                        android:paddingBottom="20dp"
+                        android:paddingLeft="20dp"
+                        android:paddingRight="20dp"
+                        android:paddingTop="0dp" >
+
+                        <TableLayout
+                            android:id="@+id/responseTable"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignTop="@+id/responsePagePassport"
+                            android:layout_marginLeft="30dp"
+                            android:layout_toRightOf="@+id/responsePagePassport" >
+
+                            <TableRow
+                                android:id="@+id/tableRow1"
+                                style="@style/row_spacing_style"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="@dimen/small_margin" >
+
+                                <TextView
+                                    android:id="@+id/idSolicitTV"
+                                    style="@style/response_textview_style"
+                                    android:layout_width="250dp"
+                                    android:text="@string/id_solicit"
+                                    android:textColor="#000" />
+
+                                <TextView
+                                    android:id="@+id/idSolicitValueTV"
+                                    style="@style/response_textview_style"
+                                    android:gravity="left"
+                                    android:text="@string/na"
+                                    android:textColor="#000" />
+                            </TableRow>
+
+                            <TableRow
+                                android:id="@+id/tableRow2"
+                                style="@style/row_spacing_style"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="@dimen/small_margin" >
+
+                                <TextView
+                                    android:id="@+id/rsanoPinTV"
+                                    style="@style/response_textview_style"
+                                    android:layout_width="250dp"
+                                    android:text="@string/rsano_pin"
+                                    android:textColor="#000" />
+
+                                <TextView
+                                    android:id="@+id/rsanoPinValueTV"
+                                    style="@style/response_textview_style"
+                                    android:gravity="left"
+                                    android:text="@string/na"
+                                    android:textColor="#000" />
+                            </TableRow>
+
+                            <TableRow
+                                android:id="@+id/tableRow3"
+                                style="@style/row_spacing_style"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="@dimen/small_margin" >
+
+                                <TextView
+                                    android:id="@+id/formReferenceNoTV"
+                                    style="@style/response_textview_style"
+                                    android:layout_width="250dp"
+                                    android:text="@string/form_reference_no"
+                                    android:textColor="#000" />
+
+                                <TextView
+                                    android:id="@+id/formReferenceNoValueTV"
+                                    style="@style/response_textview_style"
+                                    android:gravity="left"
+                                    android:text="@string/na"
+                                    android:textColor="#000" />
+                            </TableRow>
+
+                            <TableRow
+                                android:id="@+id/tableRow4"
+                                style="@style/row_spacing_style"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="@dimen/small_margin" >
+
+                                <TextView
+                                    android:id="@+id/valueDateTV"
+                                    style="@style/response_textview_style"
+                                    android:layout_width="250dp"
+                                    android:text="@string/value_date"
+                                    android:textColor="#000" />
+
+                                <TextView
+                                    android:id="@+id/valueDateValueTV"
+                                    style="@style/response_textview_style"
+                                    android:gravity="left"
+                                    android:text="@string/na"
+                                    android:textColor="#000" />
+                            </TableRow>
+
+                            <TableRow
+                                android:id="@+id/tableRow5"
+                                style="@style/row_spacing_style"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="@dimen/small_margin" >
+
+                                <TextView
+                                    android:id="@+id/commentTV"
+                                    style="@style/response_textview_style"
+                                    android:layout_width="250dp"
+                                    android:text="@string/comment"
+                                    android:textColor="#000" />
+
+                                <TextView
+                                    android:id="@+id/commentValueTV"
+                                    style="@style/response_textview_style"
+                                    android:ellipsize="none"
+                                    android:gravity="left"
+                                    android:maxLines="100"
+                                    android:text="@string/na"
+                                    android:textColor="#000" />
+                            </TableRow>
+                        </TableLayout>
+
+                        <ImageView
+                            android:id="@+id/responsePagePassport"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentLeft="true"
+                            android:layout_alignParentTop="true"
+                            android:layout_marginLeft="26dp"
+                            android:layout_marginTop="63dp"
+                            android:src="@drawable/passport_place" />
+                    </RelativeLayout>
+
+                    <LinearLayout
+                        android:id="@+id/responseOptionButtonsLL"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="350dp"
+                        android:gravity="center"
+                        android:orientation="horizontal" >
+
+                        <Button
+                            android:id="@+id/viewWelcomeLetter"
+                            style="@style/buttons_style"
+                            android:layout_width="wrap_content"
+                            android:text="View welcome letter" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/viewWelcomeLetterLL"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:background="@color/transparent_black_color"
+                        android:orientation="vertical"
+                        android:padding="20dp"
+                        android:visibility="invisible" >
+
+                        <RelativeLayout
+                            android:id="@+id/welcomeLetterRL"
+                            android:layout_width="600dp"
+                            android:layout_height="875dp"
+                            android:background="#fff"
+                            android:padding="30dp" >
+
+                            <ImageView
+                                android:id="@+id/sigmaLogoIV"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentLeft="true"
+                                android:layout_alignParentTop="true"
+                                android:src="@drawable/sigma_header" />
+
+                            <TextView
+                                android:id="@+id/dateTV"
+                                style="@style/welcomeletter_textview_style"
+                                android:layout_alignLeft="@+id/sigmaLogoIV"
+                                android:layout_below="@+id/topRightAddressTV"
+                                android:text="dd mmmm, yyyy" />
+
+                            <TextView
+                                android:id="@+id/nameTV"
+                                style="@style/welcomeletter_textview_style"
+                                android:layout_alignLeft="@+id/dateTV"
+                                android:layout_below="@+id/dateTV"
+                                android:layout_marginTop="5dp"
+                                android:text="MR. SOMEBODY SOMEBODY"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:id="@+id/telNoLabelTV"
+                                style="@style/welcomeletter_textview_style"
+                                android:layout_alignLeft="@+id/nameTV"
+                                android:layout_below="@+id/nameTV"
+                                android:layout_marginTop="5dp"
+                                android:text="@string/tel_no"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:id="@+id/telNoTV"
+                                style="@style/welcomeletter_textview_style"
+                                android:layout_alignBaseline="@+id/telNoLabelTV"
+                                android:layout_alignBottom="@+id/telNoTV"
+                                android:layout_alignRight="@+id/nameTV"
+                                android:text="0800000000" />
+
+                            <TextView
+                                android:id="@+id/topRightAddressTV"
+                                style="@style/welcomeletter_textview_style"
+                                android:layout_alignLeft="@+id/sigmaHeaderTV"
+                                android:layout_below="@+id/sigmaHeaderTV"
+                                android:layout_marginTop="5dp"
+                                android:text="@string/top_right_address" />
+
+                            <TextView
+                                android:id="@+id/secondTableRightCellTV"
+                                style="@style/welcomeletter_textview_style"
+                                android:layout_alignBaseline="@+id/secondTableLeftCellTV"
+                                android:layout_alignBottom="@+id/secondTableLeftCellTV"
+                                android:layout_alignLeft="@+id/topRightAddressTV"
+                                android:text="@string/second_table_left_cell"
+                                 />
+
+                            <TextView
+                                android:id="@+id/fileIdLabelTV"
+                                style="@style/welcomeletter_textview_style"
+                                android:layout_above="@+id/secondTableRightCellTV"
+                                android:layout_alignLeft="@+id/secondTableRightCellTV"
+                                android:text="@string/file_id_no"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:id="@+id/fileIdTV"
+                                style="@style/welcomeletter_textview_style"
+                                android:layout_alignBaseline="@+id/fileIdLabelTV"
+                                android:layout_alignBottom="@+id/fileIdLabelTV"
+                                android:layout_alignLeft="@+id/topRightAddressTV"
+                                android:layout_marginLeft="57dp"
+                                android:text="NIL"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:id="@+id/emailLabelTV"
+                                style="@style/welcomeletter_textview_style"
+                                android:layout_alignLeft="@+id/secondTableLeftCellTV"
+                                android:layout_below="@+id/secondTableLeftCellTV"
+                                android:text="@string/contributor_email"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:id="@+id/secondTableLeftCellTV"
+                                style="@style/welcomeletter_textview_style"
+                                android:layout_alignLeft="@+id/telNoLabelTV"
+                                android:layout_below="@+id/telNoLabelTV"
+                                android:text="@string/second_table_left_cell" />
+
+                            <TextView
+                                android:id="@+id/emailTV"
+                                style="@style/welcomeletter_textview_style"
+                                android:layout_alignLeft="@+id/telNoTV"
+                                android:layout_alignTop="@+id/emailLabelTV"
+                                android:text="myemail@email.com" />
+
+                            <TextView
+                                android:id="@+id/greetingTV"
+                                style="@style/welcomeletter_textview_style"
+                                android:layout_alignLeft="@+id/emailLabelTV"
+                                android:layout_below="@+id/emailLabelTV"
+                                android:layout_marginTop="5dp"
+                                android:text="Dear MR SOMEBODY"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:id="@+id/firstBodySectionTV"
+                                style="@style/welcomeletter_textview_style"
+                                android:layout_alignLeft="@+id/greetingTV"
+                                android:layout_below="@+id/greetingTV"
+                                android:layout_marginTop="5dp"
+                                android:text="@string/first_body_section" />
+
+                            <ImageView
+                                android:id="@+id/passportIV"
+                                android:layout_width="60dp"
+                                android:layout_height="90dp"
+                                android:layout_below="@+id/firstBodySectionTV"
+                                android:layout_marginTop="26dp"
+                                android:layout_toRightOf="@+id/telNoTV"
+                                android:src="@drawable/passport_place" />
+
+                            <TextView
+                                android:id="@+id/rsaPinTV"
+                                style="@style/welcomeletter_textview_style"
+                                android:layout_below="@+id/accountNoTV"
+                                android:layout_marginTop="5dp"
+                                android:layout_toRightOf="@+id/fileIdLabelTV"
+                                android:text="RSA PIN: PEN435563262367"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:id="@+id/secondBodySectionTV"
+                                style="@style/welcomeletter_textview_style"
+                                android:layout_alignLeft="@+id/firstBodySectionTV"
+                                android:layout_below="@+id/passportIV"
+                                android:text="@string/second_body_section" />
+
+                            <TextView
+                                android:id="@+id/bankTableLeftCellTV"
+                                style="@style/welcomeletter_textview_style"
+                                android:layout_below="@+id/secondBodySectionTV"
+                                android:layout_marginTop="30dp"
+                                android:layout_toRightOf="@+id/greetingTV"
+                                android:text="@string/bank_table_left_cell" />
+
+                            <TextView
+                                android:id="@+id/lastBodySectionTV"
+                                style="@style/welcomeletter_textview_style"
+                                android:layout_alignLeft="@+id/secondBodySectionTV"
+                                android:layout_below="@+id/bankTableLeftCellTV"
+                                android:layout_marginTop="5dp"
+                                android:text="@string/last_body_section" />
+
+                            <ImageView
+                                android:id="@+id/signatureIV"
+                                android:layout_width="80dp"
+                                android:layout_height="50dp"
+                                android:layout_alignLeft="@+id/lastBodySectionTV"
+                                android:layout_below="@+id/lastBodySectionTV"
+                                android:src="@drawable/authorized_signature" />
+
+                            <TextView
+                                android:id="@+id/signeeTV"
+                                style="@style/welcomeletter_textview_style"
+                                android:layout_alignLeft="@+id/signatureIV"
+                                android:layout_below="@+id/signatureIV"
+                                android:text="@string/signee"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:id="@+id/sigmaHeaderTV"
+                                style="@style/welcomeletter_textview_style"
+                                android:layout_alignTop="@+id/sigmaLogoIV"
+                                android:layout_marginLeft="29dp"
+                                android:layout_toRightOf="@+id/secondTableLeftCellTV"
+                                android:text="@string/bold_sigma"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:id="@+id/accountNoTV"
+                                style="@style/welcomeletter_textview_style"
+                                android:layout_alignLeft="@+id/rsaPinTV"
+                                android:layout_alignTop="@+id/passportIV"
+                                android:layout_marginTop="30dp"
+                                android:text="ACCOUNT NO: 3435535"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:id="@+id/bankTableRightCellTV"
+                                style="@style/welcomeletter_textview_style"
+                                android:layout_alignBaseline="@+id/bankTableLeftCellTV"
+                                android:layout_alignBottom="@+id/bankTableLeftCellTV"
+                                android:layout_toRightOf="@+id/secondTableLeftCellTV"
+                                android:text="@string/bank_table_right_cell" />
+
+                        </RelativeLayout>
+
+                        <Button
+                            android:id="@+id/OKButton"
+                            style="@style/buttons_style"
+                            android:layout_gravity="center"
+                            android:layout_marginTop="20dp"
+                            android:text="OK" />
+                    </LinearLayout>
+                </FrameLayout>
+            </ScrollView>
+            <!--
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" >
+
+                <ImageView
+                    android:id="@+id/imageView1"
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:layout_alignParentTop="true"
+                    android:adjustViewBounds="true"
+                    android:src="@drawable/top_shadow" />
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:layout_alignParentBottom="true"
+                    android:adjustViewBounds="true"
+                    android:src="@drawable/bottom_shadow" />
+
+                
+            </RelativeLayout>
+            -->
+
+        </FrameLayout>
+    </LinearLayout>
+
+</LinearLayout>
