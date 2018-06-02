@@ -8,14 +8,24 @@
         android:minSdkVersion="15"
         android:targetSdkVersion="26" />
 
+    <supports-screens
+        android:anyDensity="true"
+        android:largeScreens="true"
+        android:normalScreens="false"
+        android:smallScreens="false"
+        android:xlargeScreens="true" />
+
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.CAMERA" />
 
     <application
         android:allowBackup="true"
         android:debuggable="true"
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
+        android:screenOrientation="landscape"
+        android:testOnly="true"
         android:theme="@android:style/Theme.Light.NoTitleBar.Fullscreen" >
         <activity
             android:name="com.sigmapensions.sigmamobileapp.LoginActivity"
