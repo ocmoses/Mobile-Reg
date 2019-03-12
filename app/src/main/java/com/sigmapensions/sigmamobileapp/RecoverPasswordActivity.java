@@ -10,6 +10,7 @@ import android.graphics.Paint;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -23,7 +24,7 @@ import android.widget.TextView;
 
 import com.sigmapensions.sigmamobileapp.utils.CommonOps;
 
-public class RecoverPasswordActivity extends Activity implements OnFocusChangeListener{
+public class RecoverPasswordActivity extends AppCompatActivity implements OnFocusChangeListener{
 
 	EditText phone;
 	Button recoverPassButton;

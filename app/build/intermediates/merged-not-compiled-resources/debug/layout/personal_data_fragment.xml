@@ -1,0 +1,406 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/personal_data_frame"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content" >
+
+    <TableLayout
+        android:id="@+id/personal_data_table"
+        style="@style/fragment_table_style" 
+        android:background="@null">
+
+        <TextView
+            style="@style/confirmation_textview_style"
+            android:layout_width="match_parent"
+            android:layout_gravity="right"
+            android:layout_marginTop="20dp"
+            android:gravity="left"
+            android:text="Personal data"
+            android:textColor="#000" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="3dp"
+            android:layout_marginBottom="20dp"
+            android:layout_marginTop="20dp"
+            android:background="#000" />
+
+        <TableRow
+            android:id="@+id/pd_control_no"
+            style="@style/row_spacing_style" >
+
+            <TextView
+                style="@style/particulars_textview_style"
+                android:text="@string/control_no" />
+
+            <EditText
+                android:id="@+id/controlNumberET"
+                style="@style/particulars_edittext_style"
+                android:inputType="number"
+                android:maxLength="6" >
+
+                <requestFocus />
+            </EditText>
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/pd_account_number"
+            style="@style/row_spacing_style" >
+
+            <TextView
+                style="@style/particulars_textview_style"
+                android:text="@string/account_no" />
+
+            <EditText
+                android:id="@+id/accountNumberET"
+                style="@style/particulars_edittext_style"
+                android:inputType="number"
+                android:maxLength="10" />
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/pd_title"
+            style="@style/row_spacing_style" >
+
+            <TextView
+                style="@style/particulars_textview_style"
+                android:text="@string/title" />
+
+            <Spinner
+                android:id="@+id/titleSpinner"
+                style="@style/spinner_style" />
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/pd_surname"
+            style="@style/row_spacing_style" >
+
+            <TextView
+                style="@style/particulars_textview_style"
+                android:text="@string/surname" />
+
+            <EditText
+                android:id="@+id/pd_surnameET"
+                style="@style/particulars_edittext_style" />
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/pd_first_name"
+            style="@style/row_spacing_style" >
+
+            <TextView
+                style="@style/particulars_textview_style"
+                android:text="@string/first_name" />
+
+            <EditText
+                android:id="@+id/pd_firstNameET"
+                style="@style/particulars_edittext_style" />
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/pd_middle_name"
+            style="@style/row_spacing_style" >
+
+            <TextView
+                style="@style/particulars_textview_style"
+                android:text="@string/middle_name" />
+
+            <EditText
+                android:id="@+id/pd_MiddleNameET"
+                style="@style/particulars_edittext_style" />
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/pd_date_of_birth"
+            style="@style/row_spacing_style" >
+
+            <TextView
+                style="@style/particulars_textview_style"
+                android:text="@string/date_of_birth" />
+
+            <EditText
+                android:id="@+id/dateOfBirthET"
+                style="@style/particulars_edittext_style"
+                android:hint="@string/dob_placeholder"
+                android:inputType="date" />
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/pd_marital_status"
+            style="@style/row_spacing_style" >
+
+            <TextView
+                style="@style/particulars_textview_style"
+                android:text="@string/marital_status" />
+
+            <Spinner
+                android:id="@+id/maritalStatus"
+                style="@style/spinner_style" />
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/pd_sex"
+            style="@style/row_spacing_style" >
+
+            <TextView
+                style="@style/particulars_textview_style"
+                android:text="@string/sex" />
+
+            <RadioGroup
+                android:id="@+id/pd_sexRG"
+                android:orientation="horizontal"
+                
+                 >
+
+                <RadioButton
+                    android:id="@+id/pd_sexMale"
+                    android:text="@string/male"
+                    android:layout_marginRight="@dimen/login_layout_padding"
+                    >
+                </RadioButton>
+
+                <RadioButton
+                    android:id="@+id/pd_sexFemale"
+                    android:text="@string/female"
+                    >
+                </RadioButton>
+            </RadioGroup>
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/pd_place_of_birth"
+            style="@style/row_spacing_style" >
+
+            <TextView
+                style="@style/particulars_textview_style"
+                android:text="@string/place_of_birth" />
+
+            <Spinner
+                android:id="@+id/placeOfBirthSpinner"
+                style="@style/spinner_style" />
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/pd_nationality"
+            style="@style/row_spacing_style" >
+
+            <TextView
+                style="@style/particulars_textview_style"
+                android:text="@string/nationality" />
+
+            <Spinner
+                android:id="@+id/nationalitySpinner"
+                style="@style/spinner_style" />
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/pd_state_of_origin"
+            style="@style/row_spacing_style" >
+
+            <TextView
+                style="@style/particulars_textview_style"
+                android:text="@string/state_of_origin" />
+
+            <Spinner
+                android:id="@+id/stateOfOriginSpinner"
+                style="@style/spinner_style" />
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/pd_lga_of_origin"
+            style="@style/row_spacing_style" >
+
+            <TextView
+                style="@style/particulars_textview_style"
+                android:text="@string/lga_of_origin" />
+
+            <Spinner
+                android:id="@+id/lgaOfOriginSpinner"
+                style="@style/spinner_style" />
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/pd_email"
+            style="@style/row_spacing_style" >
+
+            <TextView
+                style="@style/particulars_textview_style"
+                android:text="@string/email" />
+
+            <EditText
+                android:id="@+id/pdEmailET"
+                style="@style/particulars_edittext_style"
+                android:inputType="textEmailAddress" />
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/pd_tel_1"
+            style="@style/row_spacing_style" >
+
+            <TextView
+                style="@style/particulars_textview_style"
+                android:text="@string/tel_1" />
+
+            <EditText
+                android:id="@+id/pdPhone1ET"
+                style="@style/particulars_edittext_style"
+                android:inputType="phone"
+                android:maxLength="11" />
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/pd_tel_2"
+            style="@style/row_spacing_style" >
+
+            <TextView
+                style="@style/particulars_textview_style"
+                android:text="@string/tel_2" />
+
+            <EditText
+                android:id="@+id/pdPhone2ET"
+                style="@style/particulars_edittext_style"
+                android:inputType="phone"
+                android:maxLength="11" />
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/pd_present_address"
+            style="@style/row_spacing_style" >
+
+            <TextView
+                style="@style/particulars_textview_style"
+                android:text="@string/present_address" />
+
+            <EditText
+                android:id="@+id/pdPresentAddressET"
+                style="@style/particulars_edittext_style"
+                android:inputType="textMultiLine" />
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/pd_permanent_home_address"
+            style="@style/row_spacing_style" >
+
+            <TextView
+                style="@style/particulars_textview_style"
+                android:text="@string/permanent_home_address" />
+
+            <EditText
+                android:id="@+id/pdPermanentHomeAddressET"
+                style="@style/particulars_edittext_style"
+                android:inputType="textMultiLine" />
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/pd_state"
+            style="@style/row_spacing_style" >
+
+            <TextView
+                style="@style/particulars_textview_style"
+                android:text="@string/state" />
+
+            <Spinner
+                android:id="@+id/stateOfpermanentAddressSpinner"
+                style="@style/spinner_style" />
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/pd_lga"
+            style="@style/row_spacing_style" >
+
+            <TextView
+                style="@style/particulars_textview_style"
+                android:text="@string/lga" />
+
+            <Spinner
+                android:id="@+id/lgaOfpermanentAddressSpinner"
+                style="@style/spinner_style" />
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/pd_current_contact_address_1"
+            style="@style/row_spacing_style" >
+
+            <TextView
+                style="@style/particulars_textview_style"
+                android:text="@string/current_contact_address_1" />
+
+            <EditText
+                android:id="@+id/pdCurrentContactAddress1ET"
+                style="@style/particulars_edittext_style"
+                android:inputType="textMultiLine" />
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/pd_current_contact_address_2"
+            style="@style/row_spacing_style" >
+
+            <TextView
+                style="@style/particulars_textview_style"
+                android:text="@string/current_contact_address_2" />
+
+            <EditText
+                android:id="@+id/pdCurrentContactAddress2ET"
+                style="@style/particulars_edittext_style"
+                android:inputType="textMultiLine" />
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/pd_address_state"
+            style="@style/row_spacing_style" >
+
+            <TextView
+                style="@style/particulars_textview_style"
+                android:text="@string/state" />
+
+            <Spinner
+                android:id="@+id/pdStateAddressSpinner"
+                style="@style/spinner_style" />
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/address_lga"
+            style="@style/row_spacing_style" >
+
+            <TextView
+                style="@style/particulars_textview_style"
+                android:text="@string/lga" />
+
+            <Spinner
+                android:id="@+id/pdLgaAddressSpinner"
+                style="@style/spinner_style" />
+        </TableRow>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="3dp"
+            android:layout_marginTop="20dp"
+            android:background="#000" />
+
+        <LinearLayout
+            android:id="@+id/navButtonsLL"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginBottom="30dp"
+            android:layout_marginTop="30dp"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:padding="20dp" >
+
+            <Button
+                android:id="@+id/submit"
+                style="@style/buttons_style"
+                android:layout_marginRight="20dp"
+                android:enabled="false"
+                android:text="@string/submit" />
+
+            <Button
+                android:id="@+id/proceed"
+                style="@style/buttons_style"
+                android:layout_marginLeft="20dp"
+                android:text="@string/proceed" />
+        </LinearLayout>
+    </TableLayout>
+
+</FrameLayout>

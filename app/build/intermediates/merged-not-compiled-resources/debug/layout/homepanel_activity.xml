@@ -1,0 +1,288 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/homepanel"
+    style="@style/large_linearlayout_style" >
+
+    <!-- The topbar should be edited -->
+
+    <RelativeLayout
+        android:id="@+id/topBar"
+        style="@style/topbar_relativelayout_style" >
+
+        <ImageView
+            android:id="@+id/fidelityHeadLogoIV"
+            style="@style/fidelity_headlogo_imageview_style" />
+
+        <LinearLayout
+            android:id="@+id/topMenu"
+            style="@style/topmenu_linearlayout_style"
+            android:layout_alignParentRight="true"
+            android:layout_alignTop="@+id/fidelityHeadLogoIV" >
+
+            <LinearLayout
+                android:id="@+id/logoutLL"
+                style="@style/logout_linearlayout_style" >
+
+                <TextView
+                    android:id="@+id/loggedInAsTV"
+                    style="@style/logged_in_as_textview_style"
+                    android:text="Logged in as: John Doe" />
+
+                <Button
+                    android:id="@+id/logoutButton"
+                    style="@style/logout_button_style"
+                    android:text="Logout" />
+            </LinearLayout>
+        </LinearLayout>
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/consoleListPanel"
+        style="@style/console_style" >
+
+        <LinearLayout
+            android:id="@+id/consoleList"
+            style="@style/left_tab_style" >
+
+            <ListView
+                android:id="@+id/admin_list"
+                style="@style/leftlist_style" />"
+        </LinearLayout>
+        
+        <!-- This layout will be updated with newer components as they relate with the current user -->
+
+        <RelativeLayout
+            android:id="@+id/console"
+            style="@style/right_tab_style"
+            android:background="@drawable/dark_blue_border" >
+
+            <TextView
+                android:id="@+id/user_info"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/user_info_text"
+                android:textColor="@color/dark_blue_color"
+                android:textSize="@dimen/normal_text_size"
+                android:textStyle="bold" />
+
+            <AnalogClock
+                android:id="@+id/analogClock1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_alignTop="@+id/user_info" />
+
+            <CalendarView
+                android:id="@+id/calendarView1"
+                android:layout_width="300dp"
+                android:layout_height="250dp"
+                android:layout_alignRight="@+id/analogClock1"
+                android:layout_alignTop="@+id/statsTV"
+                android:layout_below="@+id/analogClock1"
+                android:background="@color/transparent_black_color"
+                android:paddingTop="@dimen/frame_padding" />
+
+            <TextView
+                android:id="@+id/repNoTV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@+id/user_info"
+                android:layout_below="@+id/user_info"
+                android:text="Rep. No: XXX"
+                android:textColor="@color/dark_blue_color"
+                android:textSize="@dimen/small_text_size"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/statsTV"
+                android:layout_width="@dimen/login_layout_width"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@+id/statsTableTL"
+                android:layout_below="@+id/analogClock1"
+                android:layout_marginTop="27dp"
+                android:background="@color/transparent_black_color"
+                android:gravity="center"
+                android:text="Stats."
+                android:textColor="#000"
+                android:textSize="@dimen/small_text_size"
+                android:textStyle="bold" />
+
+            <LinearLayout
+                android:id="@+id/performanceWarningLL"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@+id/statsTableTL"
+                android:layout_alignParentBottom="true"
+                android:layout_marginBottom="24dp"
+                android:background="@color/transparent_black_color" >
+
+                <ImageView
+                    android:id="@+id/warningLogoIV"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:src="@drawable/warning_logo" 
+                     />
+
+                <TextView
+                    android:id="@+id/performanceWarningTV"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:text="There are some discrepancies in your stat values."
+                    android:textColor="#000"
+                    android:textSize="@dimen/small_text_size" 
+                    />
+            </LinearLayout>
+
+            <TableLayout
+                android:id="@+id/statsTableTL"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@+id/repNoTV"
+                android:layout_below="@+id/statsTV"
+                android:layout_marginTop="21dp" >
+
+                <TableRow
+                    android:id="@+id/tableRow1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/small_margin"
+                    android:background="@color/transparent_black_color" >
+
+                    <TextView
+                        android:id="@+id/totalRegisteredTV"
+                        style="@style/stats_textview_style"
+                        android:text="Total registered: " />
+
+                    <TextView
+                        android:id="@+id/totalRegisteredValueTV"
+                        style="@style/stats_textview_style"
+                        android:layout_width="150dp"
+                        android:gravity="left"
+                        android:text="45" />
+                </TableRow>
+
+                <TableRow
+                    android:id="@+id/tableRow2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/small_margin"
+                    android:background="@color/transparent_black_color" >
+
+                    <TextView
+                        android:id="@+id/totalPinsGeneratedTV"
+                        style="@style/stats_textview_style"
+                        android:text="Total pins generated: " />
+
+                    <TextView
+                        android:id="@+id/totalPinsGeneratedValueTV"
+                        style="@style/stats_textview_style"
+                        android:layout_width="150dp"
+                        android:gravity="left"
+                        android:text="45" />
+                </TableRow>
+
+                <TableRow
+                    android:id="@+id/tableRow5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/small_margin"
+                    android:background="@color/transparent_black_color" >
+
+                    <TextView
+                        android:id="@+id/totalWelcomeLettersTV"
+                        style="@style/stats_textview_style"
+                        android:text="Welcome Letters printed: " />
+
+                    <TextView
+                        android:id="@+id/totalWelcomeLettersValueTV"
+                        style="@style/stats_textview_style"
+                        android:layout_width="150dp"
+                        android:gravity="left"
+                        android:text="45" />
+                </TableRow>
+
+                <TableRow
+                    android:id="@+id/tableRow7"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/small_margin"
+                    android:background="@color/transparent_black_color" >
+
+                    <TextView
+                        android:id="@+id/succesfulSMSTV"
+                        style="@style/stats_textview_style"
+                        android:text="Successfull SMS: " />
+
+                    <TextView
+                        android:id="@+id/succesfulSMSValueTV"
+                        style="@style/stats_textview_style"
+                        android:layout_width="150dp"
+                        android:gravity="left"
+                        android:text="45" />
+                </TableRow>
+
+                <TableRow
+                    android:id="@+id/tableRow3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/small_margin"
+                    android:background="@color/transparent_black_color" >
+
+                    <TextView
+                        android:id="@+id/totalUploadedTV"
+                        style="@style/stats_textview_style"
+                        android:text="Total uploaded: " />
+
+                    <TextView
+                        android:id="@+id/totalUploadedValueTV"
+                        style="@style/stats_textview_style"
+                        android:layout_width="150dp"
+                        android:gravity="left"
+                        android:text="43" />
+                </TableRow>
+
+                <TableRow
+                    android:id="@+id/tableRow4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/small_margin"
+                    android:background="@color/transparent_black_color" >
+
+                    <TextView
+                        android:id="@+id/performanceIndexTV"
+                        style="@style/stats_textview_style"
+                        android:text="Performance index: " />
+
+                    <TextView
+                        android:id="@+id/performanceIndexValueTV"
+                        style="@style/stats_textview_style"
+                        android:layout_width="150dp"
+                        android:gravity="left"
+                        android:text="5.1" />
+                </TableRow>
+
+                <TableRow
+                    android:id="@+id/tableRow6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/small_margin"
+                    android:background="@color/transparent_black_color" >
+
+                    <TextView
+                        android:id="@+id/performanceCommentTV"
+                        style="@style/stats_textview_style"
+                        android:text="Comment: " />
+
+                    <TextView
+                        android:id="@+id/performanceCommentValueTV"
+                        style="@style/stats_textview_style"
+                        android:layout_width="150dp"
+                        android:gravity="left"
+                        android:text="Average" />
+                </TableRow>
+            </TableLayout>
+        </RelativeLayout>
+    </LinearLayout>
+
+</LinearLayout>

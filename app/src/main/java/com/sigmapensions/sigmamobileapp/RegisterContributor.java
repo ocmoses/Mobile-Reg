@@ -6,18 +6,26 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 
+import android.Manifest;
 import android.app.Activity;
 import android.app.Fragment;
 import android.app.FragmentManager;
 import android.app.FragmentTransaction;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.content.pm.PackageManager;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Typeface;
 import android.os.Bundle;
+import android.provider.MediaStore;
+import android.support.annotation.NonNull;
+import android.support.design.widget.CoordinatorLayout;
+import android.support.design.widget.Snackbar;
+import android.support.v4.app.ActivityCompat;
+import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -42,7 +50,7 @@ import com.sigmapensions.sigmamobileapp.NOKFragment.NOKNav;
 import com.sigmapensions.sigmamobileapp.PersonalDataFragment.ChangeToNOK;
 import com.sigmapensions.sigmamobileapp.utils.CommonOps;
 
-public class RegisterContributor extends Activity implements ChangeToNOK, 
+public class RegisterContributor extends AppCompatActivity implements ChangeToNOK,
 NOKNav, EmployerNav, BiometricButtons, ContributorNav, EmployerListInterface, OnClickListener{
 
 	private final static int PASSPORT_INT = 1;
@@ -55,6 +63,8 @@ NOKNav, EmployerNav, BiometricButtons, ContributorNav, EmployerListInterface, On
 	private final static int EMPLOYER_FRAGMENT = 3;
 	private final static int CONTRIBUTION_FRAGMENT = 4;
 	private final static int BIOMETRIC_FRAGMENT = 5;
+
+	private final static int PERMISSION_REQUEST_CAMERA = 1000;
 
 	Fragment currentFragment;
 	int CURRENT_FRAGMENT = PERSONAL_FRAGMENT;
@@ -122,13 +132,17 @@ NOKNav, EmployerNav, BiometricButtons, ContributorNav, EmployerListInterface, On
 	static String right_thumb_directory;
 	static String signature_directory;
 
+	CoordinatorLayout coordinatorLayout;
+
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.register_contributor_activity);
 
-		contributorAreasList = (ListView)findViewById(R.id.contributor_list);
+		coordinatorLayout = findViewById(R.id.coordinatorLayout);
+
+		contributorAreasList = findViewById(R.id.contributor_list);
 		adapter = new ArrayAdapter<String>(this, R.layout.left_list_layout, contributorAreas);
 		contributorAreasList.setAdapter(adapter);
 
@@ -401,8 +415,21 @@ NOKNav, EmployerNav, BiometricButtons, ContributorNav, EmployerListInterface, On
 
 	@Override
 	public void handlePassport() {
-		Intent cameraIntent = new Intent(android.provider.MediaStore.ACTION_IMAGE_CAPTURE);
-		startActivityForResult(cameraIntent, PASSPORT_INT);		
+
+			// BEGIN_INCLUDE(startCamera)
+			// Check if the Camera permission has been granted
+			if (ActivityCompat.checkSelfPermission(this, Manifest.permission.CAMERA)
+					== PackageManager.PERMISSION_GRANTED) {
+				// Permission is already available, start camera preview
+//				Snackbar.make(mLayout,
+//						R.string.camera_permission_available,
+//						Snackbar.LENGTH_SHORT).show();
+				startCamera();
+			} else {
+				// Permission is missing and must be requested.
+				requestCameraPermission();
+			}
+			// END_INCLUDE(startCamera)
 	}
 
 	@Override
@@ -530,9 +557,63 @@ NOKNav, EmployerNav, BiometricButtons, ContributorNav, EmployerListInterface, On
 	}
 
 	@Override
+	public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions,
+										   @NonNull int[] grantResults) {
+		// BEGIN_INCLUDE(onRequestPermissionsResult)
+		if (requestCode == PERMISSION_REQUEST_CAMERA) {
+			// Request for camera permission.
+			if (grantResults.length == 1 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+				// Permission has been granted. Start camera preview Activity.
+				Toast.makeText(this, "Camera permission granted!", Toast.LENGTH_LONG).show();
+				startCamera();
+			} else {
+				// Permission request was denied.
+				Toast.makeText(this, "Camera permission denied", Toast.LENGTH_LONG).show();
+			}
+		}
+		// END_INCLUDE(onRequestPermissionsResult)
+	}
+
+	/**
+	 * Requests the {@link android.Manifest.permission#CAMERA} permission.
+	 * If an additional rationale should be displayed, the user has to launch the request from
+	 * a SnackBar that includes additional information.
+	 */
+	private void requestCameraPermission() {
+		// Permission has not been granted and must be requested.
+		if (ActivityCompat.shouldShowRequestPermissionRationale(this,
+				Manifest.permission.CAMERA)) {
+			// Provide an additional rationale to the user if the permission was not granted
+			// and the user would benefit from additional context for the use of the permission.
+			// Display a SnackBar with cda button to request the missing permission.
+			Snackbar.make(coordinatorLayout, "Camera access is required",
+					Snackbar.LENGTH_INDEFINITE).setAction("OK", new View.OnClickListener() {
+				@Override
+				public void onClick(View view) {
+					// Request the permission
+					ActivityCompat.requestPermissions(RegisterContributor.this,
+							new String[]{Manifest.permission.CAMERA},
+							PERMISSION_REQUEST_CAMERA);
+				}
+			}).show();
+
+		} else {
+			Snackbar.make(coordinatorLayout, "Camera is unavailable", Snackbar.LENGTH_SHORT).show();
+			// Request the permission. The result will be received in onRequestPermissionResult().
+			ActivityCompat.requestPermissions(this,
+					new String[]{Manifest.permission.CAMERA}, PERMISSION_REQUEST_CAMERA);
+		}
+	}
+
+	private void startCamera() {
+		Intent cameraIntent = new Intent(android.provider.MediaStore.ACTION_IMAGE_CAPTURE);
+		startActivityForResult(cameraIntent, PASSPORT_INT);
+	}
+
+	@Override
 	public void showEmployerList(String string) {
 		database = edb.getWritableDatabase();
-		cursor = database.rawQuery("SELECT _id as _id, employer_code, " + "employer_name".replace("'", "\'") + ", employer_sector FROM Employer_table WHERE employer_name LIKE '" + 
+		cursor = database.rawQuery("SELECT _id as _id, employer_code, " + "employer_name".replace("'", "\'") + ", employer_sector FROM Employer_table WHERE employer_name LIKE '" +
 				string + "%' order by employer_name", null);
 		cursorAdapter = new MyCursorAdapter(this, cursor);
 		employerListView.setAdapter(cursorAdapter);

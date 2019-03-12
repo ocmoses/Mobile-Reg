@@ -1,0 +1,135 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/login_background"
+    android:padding="@dimen/activity_vertical_margin"
+    tools:context="com.sigmapensions.sigmamobileapp.LoginActivity"
+     >
+
+    <TextView
+        android:id="@+id/login_exit"
+        style="@style/login_textview_style"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignRight="@+id/login_layout"
+        android:layout_below="@+id/login_layout"
+        android:layout_marginRight="155dp"
+        android:layout_marginTop="22dp"
+        android:text="Exit"
+        android:textStyle="bold"
+        android:textColor="@color/dark_blue_color" />
+
+    <TextView
+        android:id="@+id/copyright_textView"
+        style="@style/particulars_textview_style"
+        android:layout_width="wrap_content"
+        android:layout_alignLeft="@+id/view1"
+        android:layout_alignParentBottom="true"
+        android:gravity="left"
+        android:text="@string/copyright"
+        android:textColor="@color/dark_blue_color" />
+
+    <View
+        android:id="@+id/view1"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:layout_above="@+id/copyright_textView"
+        android:layout_centerHorizontal="true"
+        android:background="@color/dark_blue_color" />
+
+    <ImageView
+        android:id="@+id/imageView1"
+        android:layout_width="@dimen/login_image_width"
+        android:layout_height="@dimen/login_image_height"
+        android:layout_alignParentTop="true"
+        android:layout_alignRight="@+id/view1"
+        android:layout_marginTop="50dp"
+        android:adjustViewBounds="true"
+        android:src="@drawable/login_sigma_header" />
+
+    <TableLayout
+        android:id="@+id/login_layout"
+        android:layout_width="@dimen/login_layout_width"
+        android:layout_height="400dp"
+        android:layout_alignRight="@+id/imageView1"
+        android:layout_below="@+id/imageView1"
+        android:layout_marginRight="37dp"
+        android:layout_marginTop="26dp"
+        android:background="@drawable/login_shape"
+        android:paddingBottom="@dimen/login_layout_padding"
+        android:paddingTop="@dimen/login_layout_padding" >
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" >
+
+            <TextView
+                style="@style/login_textview_style"
+                android:layout_width="@dimen/login_textview_width"
+                android:paddingRight="@dimen/login_textview_padding_right"
+                android:text="@string/username"
+                android:textColor="#FFF" />
+
+            <EditText
+                android:id="@+id/username"
+                style="@style/login_edittext_style"
+                android:gravity="left" >
+
+                <requestFocus />
+            </EditText>
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" >
+
+            <TextView
+                style="@style/login_textview_style"
+                android:layout_width="@dimen/login_textview_width"
+                android:paddingRight="@dimen/login_textview_padding_right"
+                android:text="@string/password"
+                android:textColor="#FFF" />
+
+            <EditText
+                android:id="@+id/password"
+                style="@style/login_edittext_style"
+                android:gravity="left"
+                android:inputType="textPassword" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/small_margin" >
+
+            <Button
+                android:id="@+id/login_button"
+                style="@style/buttons2_style"
+                android:layout_column="1"
+                android:layout_gravity="left"
+                android:layout_margin="@dimen/small_margin"
+                android:onClick="login"
+                android:text="@string/login_button_text" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/small_margin" >
+
+            <TextView
+                android:id="@+id/forgot_password"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_column="1"
+                android:layout_gravity="left"
+                android:gravity="left"
+                android:paddingLeft="@dimen/small_margin"
+                android:text="@string/forgot_password"
+                android:textColor="#FFF"
+                android:textSize="@dimen/small_text_size" />
+        </TableRow>
+    </TableLayout>
+
+</RelativeLayout>

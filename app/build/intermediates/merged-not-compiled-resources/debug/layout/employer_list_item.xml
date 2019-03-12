@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TextView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/lists_height" 
+    android:textSize="@dimen/smallest_text_size"
+    android:textColor="@color/dark_blue_color"
+    android:id="@+id/employer_list_textView"
+    android:background="@drawable/white_list_background">    
+
+</TextView>

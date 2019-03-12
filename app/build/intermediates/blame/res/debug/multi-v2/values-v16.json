@@ -4,7 +4,7 @@
             "outputFile": "C:\\Users\\Grandmaster\\AndroidStudioProjects\\SigmaMobileApp\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-v16\\values-v16.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\Grandmaster\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-26.1.0.aar\\5911149428fcf739169e0b0e17301d3a\\res\\values-v16\\values-v16.xml",
+                    "source": "C:\\Users\\Grandmaster\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-26.1.0.aar\\692801c2bee7caab1332307bd290a7a1\\res\\values-v16\\values-v16.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
@@ -23,7 +23,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\Grandmaster\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-26.1.0.aar\\f88d8d5d7f441796b091562a1033114b\\res\\values-v16\\values-v16.xml",
+                    "source": "C:\\Users\\Grandmaster\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-26.1.0.aar\\c9effb11af7c5026fac5b1bd096d9e77\\res\\values-v16\\values-v16.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",

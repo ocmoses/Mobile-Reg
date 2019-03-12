@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.os.Handler;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
@@ -14,7 +15,7 @@ import android.widget.TextView;
 
 import com.sigmapensions.sigmamobileapp.utils.CommonOps;
 
-public class LoginCodeActivity extends Activity {
+public class LoginCodeActivity extends AppCompatActivity {
 	
 	private EditText codeET;
 	private Button login_button;
@@ -44,6 +45,7 @@ public class LoginCodeActivity extends Activity {
 					Intent intent = new Intent(LoginCodeActivity.this, HomePanel.class);
 					startActivity(intent);
 					CommonOps.enterFromRight(LoginCodeActivity.this);
+					finish();
 				}else{
 					//we would say what to do here later...
 				}

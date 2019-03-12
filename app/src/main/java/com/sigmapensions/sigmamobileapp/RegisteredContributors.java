@@ -6,6 +6,7 @@ import android.content.SharedPreferences;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.AdapterView;
@@ -16,7 +17,7 @@ import android.widget.ListView;
 
 import com.sigmapensions.sigmamobileapp.utils.CommonOps;
 
-public class RegisteredContributors extends Activity {
+public class RegisteredContributors extends AppCompatActivity {
 	
 	SharedPreferences pdPrefs;
 	

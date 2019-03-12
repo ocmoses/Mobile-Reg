@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/registeredContributorsLayout"
+    style="@style/large_linearlayout_style" >
+
+    <RelativeLayout
+        android:id="@+id/topRegisteredConsole"
+        style="@style/topbar_relativelayout_style" >
+
+        <ImageView
+            android:id="@+id/fidelityHeadLogoIV"
+            style="@style/fidelity_headlogo_imageview_style" />
+
+        <LinearLayout
+            android:id="@+id/topMenu"
+            style="@style/topmenu_linearlayout_style"
+            android:layout_alignParentRight="true"
+            android:layout_alignTop="@+id/fidelityHeadLogoIV" >
+
+            <LinearLayout
+                android:id="@+id/logoutLL"
+                style="@style/logout_linearlayout_style" >
+
+                <TextView
+                    android:id="@+id/loggedInAsTV"
+                    style="@style/logged_in_as_textview_style"
+                    android:text="Logged in as: John Doe" />
+
+                <Button
+                    android:id="@+id/logoutButton"
+                    style="@style/logout_button_style"
+                    android:text="Logout" />
+            </LinearLayout>
+        </LinearLayout>
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/registeredListPanel"
+        style="@style/console_style" >
+
+        <LinearLayout
+            android:id="@+id/registeredList"
+            style="@style/left_tab_style" >
+
+            <ListView
+                android:id="@+id/registered_list"
+                style="@style/leftlist_style" />
+        </LinearLayout>
+
+        <FrameLayout
+            style="@style/right_tab_style"
+            android:paddingTop="0dp"
+            android:background="@drawable/dark_blue_border" >
+
+            <ListView
+                android:id="@+id/right_listview"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="20dp" >
+            </ListView>
+<!-- 
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" >
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:layout_alignParentTop="true"
+                    android:adjustViewBounds="true"
+                    android:src="@drawable/top_shadow" />
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:layout_alignParentBottom="true"
+                    android:adjustViewBounds="true"
+                    android:src="@drawable/bottom_shadow" />
+            </RelativeLayout>  -->
+        </FrameLayout>
+    </LinearLayout>
+
+</LinearLayout>

@@ -6,6 +6,7 @@ import android.graphics.Color;
 import android.graphics.Paint;
 import android.os.Bundle;
 import android.os.Handler;
+import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -18,7 +19,7 @@ import android.widget.TextView;
 
 import com.sigmapensions.sigmamobileapp.utils.CommonOps;
 
-public class LoginActivity extends Activity implements OnFocusChangeListener{
+public class LoginActivity extends AppCompatActivity implements OnFocusChangeListener{
 	TableLayout table;
 	EditText usernameField;
 	EditText passwordField;

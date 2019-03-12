@@ -2,6 +2,8 @@ package com.sigmapensions.sigmamobileapp;
 
 
 import java.io.IOException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.HashMap;
 
 import org.ksoap2.SoapEnvelope;
@@ -19,6 +21,8 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.os.Handler;
+import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -32,7 +36,7 @@ import com.sigmapensions.sigmamobileapp.utils.DataClass;
 import com.sigmapensions.sigmamobileapp.utils.NewContributor;
 import com.sigmapensions.sigmamobileapp.utils.ParseResponse;
 
-public class ConfirmationPage extends Activity {
+public class ConfirmationPage extends AppCompatActivity {
 
 	final static String NAMESPACE = "http://localhost/wspencomsystem/wspencom/wsReceptionResquestPencom";
 	final static String METHOD_NAME = "wmReceptionResquestNEW";
@@ -542,25 +546,25 @@ public class ConfirmationPage extends Activity {
 
 		@Override
 		protected HashMap<String, String> doInBackground(String... params) {
-			try {
+//			try {
 
-				tp.call(SOAP_ACTION, env);
-				Log.e("Request", tp.requestDump);
-				Log.e("Response", tp.responseDump);
-				gotResponse = true;
+//				tp.call(SOAP_ACTION, env);//Suspend this method.... no contacting of server
+//				Log.e("Request", tp.requestDump);
+//				Log.e("Response", tp.responseDump);
+//				gotResponse = true;
+//
+//				//well, this can happen here
+//				if(tp.responseDump != null){
+//					responseMap = new ParseResponse(tp.responseDump).extractPencomResponse();
+//					return responseMap;
+//				}
 
-				//well, this can happen here
-				if(tp.responseDump != null){
-					responseMap = new ParseResponse(tp.responseDump).extractPencomResponse();
-					return responseMap;
-				}
 
-
-			}catch (IOException e) {
-				e.printStackTrace();
-			} catch (XmlPullParserException e) {
-				e.printStackTrace();
-			}
+//			}catch (IOException e) {
+//				e.printStackTrace();
+//			} catch (XmlPullParserException e) {
+//				e.printStackTrace();
+//			}
 			return null;
 		}
 
@@ -568,67 +572,74 @@ public class ConfirmationPage extends Activity {
 		protected void onPostExecute(HashMap<String, String> result) {
 			super.onPostExecute(result);
 
-			progressDialog.dismiss();
-			CommonOps.playWarningSound(ConfirmationPage.this);
+			new Handler().postDelayed(new Runnable() { //Handler added to simulate actual server contact
+				@Override
+				public void run() {
+					progressDialog.dismiss();
+					CommonOps.playWarningSound(ConfirmationPage.this);
 
-			if(result != null){
+					if(true){//result != null){//so we don't need the result
 
-				Toast.makeText(ConfirmationPage.this, "Got Response!", Toast.LENGTH_LONG).show();
-				Intent intent = new Intent(ConfirmationPage.this, ResponsePage.class);
-				editor = pinDetailsPrefs.edit();
-				editor.clear();
-				if(responseMap != null && responseMap.containsKey("RSANO_PIN")){
+						//Toast.makeText(ConfirmationPage.this, "Got Response!", Toast.LENGTH_LONG).show();
+						Intent intent = new Intent(ConfirmationPage.this, ResponsePage.class);
+						editor = pinDetailsPrefs.edit();
+						editor.clear();
+						if(true){//responseMap != null && responseMap.containsKey("RSANO_PIN")){
 
-					editor.putString("ID_SOLICITUD", responseMap.get("ID_SOLICITUD"));
-					editor.putString("RSANO_PIN", responseMap.get("RSANO_PIN"));
-					editor.putString("FORMREFERENCENO", responseMap.get("FORMREFERENCENO"));
-					editor.putString("VALUEDATE", responseMap.get("VALUEDATE"));
-					editor.putString("COMMENT", responseMap.get("COMMENT"));
-					editor.commit();
+							editor.putString("ID_SOLICITUD", "RSA123456");//responseMap.get("ID_SOLICITUD"));//MOCKING
+							editor.putString("RSANO_PIN", "RSA123456");//responseMap.get("RSANO_PIN"));//MOCKING
+							editor.putString("FORMREFERENCENO", "124567");//responseMap.get("FORMREFERENCENO"));//MOCKING
+							editor.putString("VALUEDATE", new SimpleDateFormat("dd/MM/yyyy").format(new Date()));//responseMap.get("VALUEDATE"));
+							editor.putString("COMMENT", "successfully generated");//responseMap.get("COMMENT"));
+							editor.commit();
 
-					startActivity(intent);
-					CommonOps.enterFromRight(ConfirmationPage.this);
-					finish();
+							startActivity(intent);
+							CommonOps.enterFromRight(ConfirmationPage.this);
+							finish();
 
-				}else{
-					String errorString = responseMap.get("faultstring").substring(responseMap.get(
-							"faultstring").indexOf("System.Exception:"), responseMap.get("faultstring").indexOf(" at") - 2);
+						}else{
+							String errorString = responseMap.get("faultstring").substring(responseMap.get(
+									"faultstring").indexOf("System.Exception:"), responseMap.get("faultstring").indexOf(" at") - 2);
 
-					dialog = new MyDialog(ConfirmationPage.this, null, "Server error response", errorString, "OK");
-					dialog.show();
-					dialog.getPositiveButton().setOnClickListener(new OnClickListener(){
+							dialog = new MyDialog(ConfirmationPage.this, null, "Server error response", errorString, "OK");
+							dialog.show();
+							dialog.getPositiveButton().setOnClickListener(new OnClickListener(){
 
-						@Override
-						public void onClick(View arg0) {
-							CommonOps.playClickSound(ConfirmationPage.this);
-							dialog.dismiss();
+								@Override
+								public void onClick(View arg0) {
+									CommonOps.playClickSound(ConfirmationPage.this);
+									dialog.dismiss();
+								}
+
+							});
+
 						}
 
-					});
+					}else{
+						Toast.makeText(ConfirmationPage.this, "Sorry, couldn't get response", Toast.LENGTH_LONG).show();
 
+						Intent intent = new Intent(ConfirmationPage.this, ResponsePage.class);
+						startActivity(intent);
+						CommonOps.enterFromRight(ConfirmationPage.this);
+						finish();
+						//
+						//				dialog = new MyDialog(ConfirmationPage.this, null, "Network error",
+						//						"Didn't get any response,\nPlease check your network connection", "OK");
+						//				dialog.show();
+						//				dialog.getPositiveButton().setOnClickListener(new OnClickListener(){
+						//
+						//					@Override
+						//					public void onClick(View arg0) {
+						//CommonOps.playClickSound(ConfirmationPage.this);
+						//						dialog.dismiss();
+						//					}
+						//
+						//				});
+					}
 				}
+			}, 5000);
 
-			}else{
-				Toast.makeText(ConfirmationPage.this, "Sorry, couldn't get response", Toast.LENGTH_LONG).show();
 
-				Intent intent = new Intent(ConfirmationPage.this, ResponsePage.class);
-				startActivity(intent);
-				CommonOps.enterFromRight(ConfirmationPage.this);
-				finish();
-				//				
-				//				dialog = new MyDialog(ConfirmationPage.this, null, "Network error", 
-				//						"Didn't get any response,\nPlease check your network connection", "OK");	
-				//				dialog.show();
-				//				dialog.getPositiveButton().setOnClickListener(new OnClickListener(){
-				//
-				//					@Override
-				//					public void onClick(View arg0) {
-				//CommonOps.playClickSound(ConfirmationPage.this);
-				//						dialog.dismiss();
-				//					}
-				//					
-				//				});
-			}
 		}
 	}
 }

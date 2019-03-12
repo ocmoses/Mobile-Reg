@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/rPinResponseFromPencom"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="center"
+    android:background="@drawable/white_list_background"
+    android:padding="20dp" >
+
+    <ImageView
+        android:id="@+id/rResponsePagePassport"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="26dp"
+        android:layout_marginTop="63dp"
+        android:src="@drawable/passport_place" />
+
+    <TableLayout
+        android:id="@+id/rResponseTable"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/rResponsePagePassport"
+        android:layout_marginLeft="30dp"
+        android:layout_toRightOf="@+id/rResponsePagePassport" >
+
+        <TableRow
+            android:id="@+id/rTableRow1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/small_margin" >
+
+            <TextView
+                android:id="@+id/idSolicitTV"
+                style="@style/response_textview_style"
+                android:layout_width="250dp"
+                android:text="@string/id_solicit"
+                android:textColor="#000" />
+
+            <TextView
+                android:id="@+id/rIdSolicitValueTV"
+                style="@style/response_textview_style"
+                android:gravity="left"
+                android:text="@string/na"
+                android:textColor="#000" />
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/rTableRow2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/small_margin" >
+
+            <TextView
+                android:id="@+id/rsanoPinTV"
+                style="@style/response_textview_style"
+                android:layout_width="250dp"
+                android:text="@string/rsano_pin"
+                android:textColor="#000" />
+
+            <TextView
+                android:id="@+id/rRsanoPinValueTV"
+                style="@style/response_textview_style"
+                android:gravity="left"
+                android:text="@string/na"
+                android:textColor="#000" />
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/rTableRow3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/small_margin" >
+
+            <TextView
+                android:id="@+id/formReferenceNoTV"
+                style="@style/response_textview_style"
+                android:layout_width="250dp"
+                android:text="@string/form_reference_no"
+                android:textColor="#000" />
+
+            <TextView
+                android:id="@+id/rFormReferenceNoValueTV"
+                style="@style/response_textview_style"
+                android:gravity="left"
+                android:text="@string/na"
+                android:textColor="#000" />
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/rTableRow4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/small_margin" >
+
+            <TextView
+                android:id="@+id/valueDateTV"
+                style="@style/response_textview_style"
+                android:layout_width="250dp"
+                android:text="@string/value_date"
+                android:textColor="#000" />
+
+            <TextView
+                android:id="@+id/rValueDateValueTV"
+                style="@style/response_textview_style"
+                android:gravity="left"
+                android:text="@string/na"
+                android:textColor="#000" />
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/rTableRow5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/small_margin" >
+
+            <TextView
+                android:id="@+id/commentTV"
+                style="@style/response_textview_style"
+                android:layout_width="250dp"
+                android:text="@string/comment"
+                android:textColor="#000" 
+                />
+
+            <TextView
+                android:id="@+id/rCommentValueTV"
+                style="@style/response_textview_style"
+                android:ellipsize="none"
+                android:gravity="left"
+                android:maxLines="100"
+                android:text="@string/na"
+                android:textColor="#000" />
+        </TableRow>
+    </TableLayout>
+
+    <Button
+        android:id="@+id/rViewWelcomeLetter"
+        style="@style/buttons_style"
+        android:layout_width="wrap_content"
+        android:layout_alignLeft="@+id/rResponseTable"
+        android:layout_below="@+id/rResponseTable"
+        android:layout_marginTop="50dp"
+        android:text="View welcome letter" />
+     
+
+</RelativeLayout>

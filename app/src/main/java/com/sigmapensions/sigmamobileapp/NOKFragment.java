@@ -113,11 +113,11 @@ public class NOKFragment extends Fragment implements OnFocusChangeListener, OnCh
 			editor.putString("nokTitleSpinner", "MR.");
 			editor.putString("nokRelationshipSpinner", "SON");
 			editor.putString("nok_radiogroup", "M");
-			editor.putString("nokPhoneNumberET", "080000000000");
+			editor.putString("nokPhoneNumberET", "08012345678");
 			editor.putString("nokDateOfBirthET", "01/01/2002");
-			editor.putString("nokSurnameET", "NEXT_OF_KIN_LAST_NAME");
-			editor.putString("nokFirstNameET", "NEXT_OF_KIN_FIRST_NAME");
-			editor.putString("nokMiddleNameET", "NEXT_OF_KIN_OTHER_NAMES");
+			editor.putString("nokSurnameET", "DICKENS");
+			editor.putString("nokFirstNameET", "CHARLIE");
+			editor.putString("nokMiddleNameET", "");
 			editor.putString("nokEmailET", "me@myemail.com");
 			editor.putString("nokContactAddress1ET", "NEXT_OF_KIN_ADDRESS");
 			editor.putString("nokContactAddress2ET", "NEXT_OF_KIN_CONTACT_ADDRESS");

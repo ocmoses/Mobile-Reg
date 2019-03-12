@@ -1,0 +1,263 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/personal_data_frame"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+   	>
+
+    <TableLayout
+        android:id="@+id/nok_table"
+         style="@style/fragment_table_style"
+         android:background="@null" >
+
+        <TextView
+            style="@style/confirmation_textview_style"
+            android:layout_width="match_parent"
+            android:layout_gravity="right"
+            android:layout_marginTop="20dp"
+            android:gravity="left"
+            android:text="Next of kin data"
+            android:textColor="#000" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="3dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="20dp"
+            android:background="#000" />
+
+        <TableRow
+            android:id="@+id/nok_title"
+            style="@style/row_spacing_style" >
+
+            <TextView
+                style="@style/particulars_textview_style"
+                android:text="@string/title" />
+
+            <Spinner
+                android:id="@+id/nokTitleSpinner"
+                style="@style/spinner_style" />
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/nok_surname"
+            style="@style/row_spacing_style" >
+
+            <TextView
+                style="@style/particulars_textview_style"
+                android:text="@string/surname" />
+
+            <EditText
+                android:id="@+id/nokSurnameET"
+                style="@style/particulars_edittext_style" />
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/nok_first_name"
+            style="@style/row_spacing_style" >
+
+            <TextView
+                style="@style/particulars_textview_style"
+                android:text="@string/first_name" />
+
+            <EditText
+                android:id="@+id/nokFirstNameET"
+                style="@style/particulars_edittext_style" />
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/nok_middle_name"
+            style="@style/row_spacing_style" >
+
+            <TextView
+                style="@style/particulars_textview_style"
+                android:text="@string/middle_name" />
+
+            <EditText
+                android:id="@+id/nokMiddleNameET"
+                style="@style/particulars_edittext_style" />
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/nok_date_of_birth"
+            style="@style/row_spacing_style" >
+
+            <TextView
+                style="@style/particulars_textview_style"
+                android:text="@string/date_of_birth" />
+
+            <EditText
+                android:id="@+id/nokDateOfBirthET"
+                style="@style/particulars_edittext_style"
+                android:hint="@string/dob_placeholder"
+                android:inputType="date" />
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/nok_sex"
+            style="@style/row_spacing_style" >
+
+            <TextView
+                style="@style/particulars_textview_style"
+                android:text="@string/sex" />
+
+            <RadioGroup
+                android:id="@+id/nok_radiogroup"
+                android:orientation="horizontal" >
+
+                <RadioButton
+                    android:id="@+id/nokSexMale"
+                    android:text="@string/male"
+                    android:layout_marginRight="@dimen/login_layout_padding"
+                     >
+                </RadioButton>
+
+                <RadioButton
+                    android:id="@+id/nokSexFemale"
+                    android:text="@string/female"
+                     >
+                </RadioButton>
+            </RadioGroup>
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/nok_relationship"
+            style="@style/row_spacing_style" >
+
+            <TextView
+                style="@style/particulars_textview_style"
+                android:text="@string/relationship" />
+
+            <Spinner
+                android:id="@+id/nokRelationshipSpinner"
+                style="@style/spinner_style" />
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/phone_no"
+            style="@style/row_spacing_style" >
+
+            <TextView
+                style="@style/particulars_textview_style"
+                android:text="@string/phone_no" />
+
+            <EditText
+                android:id="@+id/nokPhoneNumberET"
+                style="@style/particulars_edittext_style"
+                android:inputType="number" />
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/nok_email"
+            style="@style/row_spacing_style" >
+
+            <TextView
+                style="@style/particulars_textview_style"
+                android:text="@string/email" />
+
+            <EditText
+                android:id="@+id/nokEmailET"
+                style="@style/particulars_edittext_style"
+                android:inputType="textEmailAddress" />
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/nok_contact_address_pobox_1"
+            style="@style/row_spacing_style" >
+
+            <TextView
+                style="@style/particulars_textview_style"
+                android:text="@string/nok_address" />
+
+            <EditText
+                android:id="@+id/nokContactAddress1ET"
+                style="@style/particulars_edittext_style"
+                android:inputType="textMultiLine" />
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/nok_contact_address_pobox_2"
+            style="@style/row_spacing_style" >
+
+            <TextView
+                style="@style/particulars_textview_style"
+                android:text="@string/contact_address_pobox" />
+
+            <EditText
+                android:id="@+id/nokContactAddress2ET"
+                style="@style/particulars_edittext_style"
+                android:inputType="textMultiLine" />
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/nok_country"
+            style="@style/row_spacing_style" >
+
+            <TextView
+                style="@style/particulars_textview_style"
+                android:text="@string/country" />
+
+            <Spinner
+                android:id="@+id/nokCountrySpinner"
+                style="@style/spinner_style" />
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/nok_state"
+            style="@style/row_spacing_style" >
+
+            <TextView
+                style="@style/particulars_textview_style"
+                android:text="@string/state" />
+
+            <Spinner
+                android:id="@+id/nokStateSpinner"
+                style="@style/spinner_style" />
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/nok_lga"
+            style="@style/row_spacing_style" >
+
+            <TextView
+                style="@style/particulars_textview_style"
+                android:text="@string/lga" />
+
+            <Spinner
+                android:id="@+id/nokLgaSpinner"
+                style="@style/spinner_style" />
+        </TableRow>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="3dp"
+            android:layout_marginBottom="20dp"
+            android:layout_marginTop="20dp"
+            android:background="#000" />
+
+        <LinearLayout
+            android:id="@+id/navButtonsLL"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginBottom="30dp"
+            android:layout_marginTop="30dp"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:padding="20dp" >
+
+            <Button
+                android:id="@+id/nok_back"
+                style="@style/buttons_style"
+                android:layout_marginRight="20dp"
+                android:text="@string/back" />
+
+            <Button
+                android:id="@+id/nok_proceed"
+                style="@style/buttons_style"
+                android:layout_marginLeft="20dp"
+                android:text="@string/proceed" />
+        </LinearLayout>
+    </TableLayout>
+
+</FrameLayout>

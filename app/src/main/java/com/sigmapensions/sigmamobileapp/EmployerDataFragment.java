@@ -122,15 +122,16 @@ public class EmployerDataFragment extends Fragment implements OnFocusChangeListe
 			editor.putString("edStateSpinner", "KEBBI");
 			editor.putString("edLgaSpinner", "KEBBI");
 			editor.putString("edProfessionET", "DRIVER");
-			editor.putString("edPhoneNumberET", "08000000000");
+			editor.putString("edPhoneNumberET", "08001200001");
 			editor.putString("edFileIdNumberET", "6269");
 			editor.putString("edDesignationET", "DESIGNATION");
 			editor.putString("edDateOfFirstEmploymentET", "16/09/2015");
 			editor.putString("edDateOfConfirmationET", "16/09/2015");
+			editor.putString("edBranchOrLocationOfPostingET", "Kebbi");
 			editor.putString("edEmailET", "employer@email.com");
 			editor.putString("private_public", "");
 			editor.putString("sector_radiogroup", "");
-			editor.putString("employerType", "");
+			editor.putString("employerType", "2");
 			
 			editor.commit();
 
@@ -325,7 +326,7 @@ public class EmployerDataFragment extends Fragment implements OnFocusChangeListe
 		edDesignationET.setText(edPrefs.getString("edDesignationET", ""));
 		edDateOfFirstEmploymentET.setText(edPrefs.getString("edDateOfFirstEmploymentET", ""));
 		edDateOfConfirmationET.setText(edPrefs.getString("edDateOfConfirmationET", ""));
-		edBranchOrLocationOfPostingET.setText(edPrefs.getString("edBranchOrLocationOfPostingET", ""));
+		edBranchOrLocationOfPostingET.setText(edPrefs.getString("edBranchOrLocationOfPostingET", "Kebbi"));
 		edEmailET.setText(edPrefs.getString("edEmailET", ""));
 		
 		if(private_sector_employeeRB.getText().toString().equals(edPrefs.getString("private_public", ""))){

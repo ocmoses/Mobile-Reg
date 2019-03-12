@@ -281,7 +281,7 @@ public class CommonOps {
 
 	public static String getEncodedPassport(Context context){
 		if(getImageEncodedString(context, "passport") == null){
-			Bitmap passportBitmap = BitmapFactory.decodeStream(context.getResources().openRawResource(R.drawable.passport_place));
+			Bitmap passportBitmap = BitmapFactory.decodeResource(context.getResources(), R.drawable.passport_place);
 			ByteArrayOutputStream stream = new ByteArrayOutputStream();
 			passportBitmap.compress(Bitmap.CompressFormat.JPEG, 100, stream);
 			byte[] bitmapdata = stream.toByteArray();

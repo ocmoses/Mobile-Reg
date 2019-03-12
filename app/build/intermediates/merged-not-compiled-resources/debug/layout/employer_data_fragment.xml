@@ -1,0 +1,310 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/personal_data_frame"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content" >
+
+    <TableLayout
+        android:id="@+id/employer_table"
+         style="@style/fragment_table_style" 
+         android:background="@null">
+
+        <TextView
+            style="@style/confirmation_textview_style"
+            android:layout_width="match_parent"
+            android:layout_gravity="right"
+            android:layout_marginTop="20dp"
+            android:gravity="left"
+            android:text="Employment data"
+            android:textColor="#000" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="3dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="20dp"
+            android:background="#000" />
+
+        <TableRow
+            android:id="@+id/ed_noo"
+            style="@style/row_spacing_style" >
+
+            <TextView
+                style="@style/particulars_textview_style"
+                android:text="@string/name_of_organization" />
+
+            <EditText
+                android:id="@+id/edNameOfOrganizationET"
+                style="@style/particulars_edittext_style" />
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/ed_employer_code"
+            style="@style/row_spacing_style" >
+
+            <TextView
+                style="@style/particulars_textview_style"
+                android:text="@string/employer_code" />
+
+            <EditText
+                android:id="@+id/edEmployerCodeET"
+                style="@style/particulars_edittext_style"
+                android:editable="false" />
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/ed_office_address_1"
+            style="@style/row_spacing_style" >
+
+            <TextView
+                style="@style/particulars_textview_style"
+                android:text="@string/office_address_npobox_1" />
+
+            <EditText
+                android:id="@+id/edOfficeAddress1ET"
+                style="@style/particulars_edittext_style"
+                android:inputType="textMultiLine" />
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/ed_office_address_2"
+            style="@style/row_spacing_style" >
+
+            <TextView
+                style="@style/particulars_textview_style"
+                android:text="@string/office_address_npobox_2" />
+
+            <EditText
+                android:id="@+id/edOfficeAddress2ET"
+                style="@style/particulars_edittext_style"
+                android:inputType="textMultiLine" />
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/ed_state"
+            style="@style/row_spacing_style" >
+
+            <TextView
+                style="@style/particulars_textview_style"
+                android:text="@string/state" />
+
+            <Spinner
+                android:id="@+id/edStateSpinner"
+                style="@style/spinner_style" />
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/ed_lga"
+            style="@style/row_spacing_style" >
+
+            <TextView
+                style="@style/particulars_textview_style"
+                android:text="@string/lga" />
+
+            <Spinner
+                android:id="@+id/edLgaSpinner"
+                style="@style/spinner_style" />
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/ed_profession"
+            style="@style/row_spacing_style" >
+
+            <TextView
+                style="@style/particulars_textview_style"
+                android:text="@string/profession" />
+
+            <EditText
+                android:id="@+id/edProfessionET"
+                style="@style/particulars_edittext_style" />
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/ed_phone_no"
+            style="@style/row_spacing_style" >
+
+            <TextView
+                style="@style/particulars_textview_style"
+                android:text="@string/phone_no" />
+
+            <EditText
+                android:id="@+id/edPhoneNumberET"
+                style="@style/particulars_edittext_style"
+                android:inputType="phone" />
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/ed_file_id_no"
+            style="@style/row_spacing_style" >
+
+            <TextView
+                style="@style/particulars_textview_style"
+                android:text="@string/file_or_id_no" />
+
+            <EditText
+                android:id="@+id/edFileIdNumberET"
+                style="@style/particulars_edittext_style"
+                android:inputType="number" />
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/ed_designation"
+            style="@style/row_spacing_style" >
+
+            <TextView
+                style="@style/particulars_textview_style"
+                android:text="@string/designation" />
+
+            <EditText
+                android:id="@+id/edDesignationET"
+                style="@style/particulars_edittext_style" />
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/ed_dofe"
+            style="@style/row_spacing_style" >
+
+            <TextView
+                style="@style/particulars_textview_style"
+                android:text="@string/date_of_first_employment" />
+
+            <EditText
+                android:id="@+id/edDateOfFirstEmploymentET"
+                style="@style/particulars_edittext_style"
+                android:hint="@string/dob_placeholder"
+                android:inputType="date" />
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/ed_doc"
+            style="@style/row_spacing_style" >
+
+            <TextView
+                style="@style/particulars_textview_style"
+                android:text="@string/date_of_confirmation" />
+
+            <EditText
+                android:id="@+id/edDateOfConfirmationET"
+                style="@style/particulars_edittext_style"
+                android:hint="@string/dob_placeholder"
+                android:inputType="date" />
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/ed_bolop"
+            style="@style/row_spacing_style" >
+
+            <TextView
+                style="@style/particulars_textview_style"
+                android:text="@string/branch_or_location_of_posting" />
+
+            <EditText
+                android:id="@+id/edBranchOrLocationOfPostingET"
+                style="@style/particulars_edittext_style" />
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/ed_email"
+            style="@style/row_spacing_style" >
+
+            <TextView
+                style="@style/particulars_textview_style"
+                android:text="@string/email" />
+
+            <EditText
+                android:id="@+id/edEmailET"
+                style="@style/particulars_edittext_style"
+                android:inputType="textEmailAddress" />
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/ed_sector"
+            style="@style/row_spacing_style" >
+
+            <RadioGroup
+                android:id="@+id/private_public"
+                android:layout_column="1"
+                android:orientation="horizontal" >
+
+                <RadioButton
+                    android:id="@+id/private_sector_employeeRB"
+                    android:text="@string/private_sector_employee" />
+
+                <RadioButton
+                    android:id="@+id/public_sector_employeeRB"
+                    android:text="@string/public_sector_employee" />
+            </RadioGroup>
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/ed_sector2"
+            style="@style/row_spacing_style" >
+
+            <RadioGroup
+                android:id="@+id/sector_radiogroup"
+                android:layout_column="1" >
+
+                <RadioButton
+                    android:id="@+id/public_federalRB"
+                    android:text="@string/public_federal" >
+                </RadioButton>
+
+                <RadioButton
+                    android:id="@+id/public_localRB"
+                    android:text="@string/public_local" >
+                </RadioButton>
+
+                <RadioButton
+                    android:id="@+id/public_stateRB"
+                    android:text="@string/public_state" >
+                </RadioButton>
+
+                <RadioButton
+                    android:id="@+id/mdasRB"
+                    android:text="@string/mdas" >
+                </RadioButton>
+
+                <RadioButton
+                    android:id="@+id/private_sectorRB"
+                    android:text="@string/private_sector" >
+                </RadioButton>
+
+                <RadioButton
+                    android:id="@+id/informalRB"
+                    android:text="@string/informal" >
+                </RadioButton>
+            </RadioGroup>
+        </TableRow>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="3dp"
+            android:layout_marginTop="20dp"
+            android:background="#000" />
+
+        <LinearLayout
+            android:id="@+id/navButtonsLL"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginBottom="30dp"
+            android:layout_marginTop="30dp"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:padding="20dp" >
+
+            <Button
+                android:id="@+id/ed_back"
+                style="@style/buttons_style"
+                android:layout_marginRight="20dp"
+                android:text="@string/back" />
+
+            <Button
+                android:id="@+id/ed_proceed"
+                style="@style/buttons_style"
+                android:layout_marginLeft="20dp"
+                android:text="@string/proceed" />
+        </LinearLayout>
+    </TableLayout>
+
+</FrameLayout>

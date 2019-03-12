@@ -4,7 +4,17 @@
             "outputFile": "C:\\Users\\Grandmaster\\AndroidStudioProjects\\SigmaMobileApp\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-v24\\values-v24.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\Grandmaster\\.gradle\\caches\\transforms-1\\files-1.1\\support-media-compat-26.1.0.aar\\a2ef5af170ba93c89a5741e52d5df146\\res\\values-v24\\values-v24.xml",
+                    "source": "C:\\Users\\Grandmaster\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-26.1.0.aar\\692801c2bee7caab1332307bd290a7a1\\res\\values-v24\\values-v24.xml",
+                    "from": {
+                        "startLines": "2,3,4,5,6,7",
+                        "startColumns": "4,4,4,4,4,4",
+                        "startOffsets": "55,212,347,416,480,549",
+                        "endColumns": "156,134,68,63,68,69",
+                        "endOffsets": "207,342,411,475,544,614"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\Grandmaster\\.gradle\\caches\\transforms-1\\files-1.1\\support-media-compat-26.1.0.aar\\a04796c6adb139d68f81acf12dfad651\\res\\values-v24\\values-v24.xml",
                     "from": {
                         "startLines": "2,3,4,5",
                         "startColumns": "4,4,4,4",
@@ -18,16 +28,6 @@
                         "startOffsets": "619,685,746,812",
                         "endColumns": "65,60,65,66",
                         "endOffsets": "680,741,807,874"
-                    }
-                },
-                {
-                    "source": "C:\\Users\\Grandmaster\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-26.1.0.aar\\5911149428fcf739169e0b0e17301d3a\\res\\values-v24\\values-v24.xml",
-                    "from": {
-                        "startLines": "2,3,4,5,6,7",
-                        "startColumns": "4,4,4,4,4,4",
-                        "startOffsets": "55,212,347,416,480,549",
-                        "endColumns": "156,134,68,63,68,69",
-                        "endOffsets": "207,342,411,475,544,614"
                     }
                 }
             ]

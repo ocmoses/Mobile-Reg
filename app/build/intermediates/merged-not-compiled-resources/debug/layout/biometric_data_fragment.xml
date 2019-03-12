@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/personal_data_frame"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+     >
+	<LinearLayout 
+	    android:layout_width="match_parent"
+	    android:layout_height="match_parent"
+	    android:orientation="vertical">
+	    
+	    <RelativeLayout
+        android:id="@+id/biometric_layout"
+        style="@style/fragment_table_style"
+        android:paddingBottom="@dimen/login_layout_padding"
+        android:background="@drawable/white_list_background" >
+
+        <ImageView
+            android:id="@+id/signature"
+            android:layout_width="200dp"
+            android:layout_height="100dp"
+            android:layout_alignBottom="@+id/passport"
+            android:layout_alignLeft="@+id/bLeftThumb"
+            android:src="@drawable/signature_place" />
+
+        <ImageView
+            android:id="@+id/leftThumb"
+            android:layout_width="100dp"
+            android:layout_height="150dp"
+            android:layout_alignTop="@+id/passport"
+            android:layout_marginLeft="32dp"
+            android:layout_toRightOf="@+id/passport"
+            android:src="@drawable/thumb_print_place" />
+
+        <ImageView
+            android:id="@+id/passport"
+            android:layout_width="300dp"
+            android:layout_height="400dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:src="@drawable/passport_place" />
+
+        <ImageView
+            android:id="@+id/rightThumb"
+            android:layout_width="100dp"
+            android:layout_height="150dp"
+            android:layout_alignParentTop="true"
+            android:layout_toRightOf="@+id/signature"
+            android:src="@drawable/thumb_print_place" />
+
+        <Button
+            android:id="@+id/bRightThumb"
+            style="@style/buttons_style"
+            android:layout_width="wrap_content"
+            android:layout_below="@+id/rightThumb"
+            android:layout_marginTop="46dp"
+            android:layout_toRightOf="@+id/signature"
+            android:text="@string/right_thumb" />
+
+        <Button
+            android:id="@+id/bLeftThumb"
+            style="@style/buttons_style"
+            android:layout_width="wrap_content"
+            android:layout_alignBaseline="@+id/bRightThumb"
+            android:layout_alignBottom="@+id/bRightThumb"
+            android:layout_alignLeft="@+id/leftThumb"
+            android:text="@string/left_thumb" />
+
+        <Button
+            android:id="@+id/bSignature"
+            style="@style/buttons_style"
+            android:layout_width="wrap_content"
+            android:layout_alignLeft="@+id/signature"
+            android:layout_below="@+id/signature"
+            android:layout_marginTop="42dp"
+            android:text="@string/signature" />
+
+        <Button
+            android:id="@+id/bCapture"
+            style="@style/buttons_style"
+            android:layout_width="wrap_content"
+            android:layout_alignBaseline="@+id/bSignature"
+            android:layout_alignBottom="@+id/bSignature"
+            android:layout_alignRight="@+id/passport"
+            android:layout_marginRight="52dp"
+            android:text="@string/capture_passport" />        
+        
+    </RelativeLayout>
+    <View
+            android:id="@+id/view1"
+            android:layout_width="match_parent"
+            android:layout_height="3dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginBottom="30dp"
+            android:background="#000" />
+	    
+    <LinearLayout 
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:paddingBottom="100dp">
+        
+        <Button
+                android:id="@+id/bBack"
+                style="@style/buttons_style"
+                android:text="@string/back"
+                android:layout_marginRight="20dp"/>
+
+            <Button
+                android:id="@+id/bSubmit"
+                style="@style/buttons_style"
+                android:text="@string/submit"
+                android:layout_marginLeft="20dp" />
+    </LinearLayout>
+	    
+	</LinearLayout>
+    
+
+</FrameLayout>

@@ -1,5 +1,7 @@
 package com.sigmapensions.sigmamobileapp.utils;
 
+import android.util.Log;
+
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.io.PrintWriter;
@@ -38,10 +40,11 @@ public class PostXML {
 						+ "</recipients>\n"
 						+ "</SMS>";
 
+
 		String theurl = "http://api.ebulksms.com:8080/sendsms.xml";
 		PostXML requester = new PostXML();
 		feedBack = requester.postXMLData(xmlrequest, theurl);
-
+		Log.e("MobileReg", "Feedback: " + feedBack);
 		return feedBack;
 	}
 

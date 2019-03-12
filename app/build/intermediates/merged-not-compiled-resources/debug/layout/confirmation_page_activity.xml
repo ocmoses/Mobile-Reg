@@ -1,0 +1,1230 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/conirmationLayout"
+    style="@style/large_linearlayout_style"
+     >
+
+    <RelativeLayout
+        android:id="@+id/topConsole"
+        style="@style/topbar_relativelayout_style" >
+
+        <ImageView
+            android:id="@+id/fidelityHeadLogoIV"
+            style="@style/fidelity_headlogo_imageview_style" />
+
+        <LinearLayout
+            android:id="@+id/topMenu"
+            style="@style/topmenu_linearlayout_style"
+            android:layout_alignParentRight="true"
+            android:layout_alignTop="@+id/fidelityHeadLogoIV" >
+
+            <LinearLayout
+                android:id="@+id/logoutLL"
+                style="@style/logout_linearlayout_style" >
+
+                <TextView
+                    android:id="@+id/loggedInAsTV"
+                    style="@style/logged_in_as_textview_style"
+                    android:text="Logged in as: John Doe" />
+
+                <Button
+                    android:id="@+id/logoutButton"
+                    style="@style/logout_button_style"
+                    android:text="Logout" />
+            </LinearLayout>
+        </LinearLayout>
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/confirmationPanel"
+        style="@style/console_style" >
+
+        <FrameLayout
+            style="@style/left_tab_style"
+            android:paddingTop="0dp" >
+
+            <ScrollView
+                android:id="@+id/leftScrollPanel"
+                style="@style/leftlist_style" >
+
+                <LinearLayout
+                    android:id="@+id/passportPanel"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical" >
+
+                    <ImageView
+                        android:id="@+id/passport_confirm"
+                        android:layout_width="300dp"
+                        android:layout_height="400dp"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="30dp"
+                        android:src="@drawable/passport_place" />
+
+                    <ImageView
+                        android:id="@+id/left_thumb_confirm"
+                        android:layout_width="150dp"
+                        android:layout_height="200dp"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="30dp"
+                        android:src="@drawable/thumb_print_place" />
+
+                    <ImageView
+                        android:id="@+id/right_thumb_confirm"
+                        android:layout_width="150dp"
+                        android:layout_height="200dp"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="30dp"
+                        android:src="@drawable/thumb_print_place" />
+
+                    <ImageView
+                        android:id="@+id/signature_confirm"
+                        android:layout_width="300dp"
+                        android:layout_height="150dp"
+                        android:layout_gravity="center"
+                        android:layout_marginBottom="100dp"
+                        android:layout_marginTop="30dp"
+                        android:src="@drawable/signature_place" />
+                </LinearLayout>
+            </ScrollView>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" >
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:layout_alignParentTop="true"
+                    android:adjustViewBounds="true"
+                    android:src="@drawable/top_shadow" />
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:layout_alignParentBottom="true"
+                    android:adjustViewBounds="true"
+                    android:src="@drawable/bottom_shadow" />
+            </RelativeLayout>
+        </FrameLayout>
+
+        <FrameLayout
+            style="@style/right_tab_style"
+            android:paddingTop="0dp" >
+
+            <ScrollView
+                android:id="@+id/right_scrollview"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" >
+
+                <TableLayout
+                    android:id="@+id/confirmationTable"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="20dp" >
+
+                    <!-- personal data starts here -->
+
+                    <TextView
+                        style="@style/confirmation_textview_style"
+                        android:layout_width="match_parent"
+                        android:layout_gravity="right"
+                        android:layout_marginTop="20dp"
+                        android:gravity="center"
+                        android:text="Personal data"
+                        android:textColor="@color/dark_blue_color"
+                        android:textStyle="bold" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="3dp"
+                        android:layout_marginBottom="20dp"
+                        android:background="#000" />
+
+                    <TableRow
+                        android:id="@+id/tableRow1"
+                        style="@style/confirmation_tablerow_style" >
+
+                        <TextView
+                            style="@style/confirmation_textview_style"
+                            android:layout_width="400dp"
+                            android:text="@string/control_no" />
+
+                        <TextView
+                            android:id="@+id/control_no_value"
+                            style="@style/confirmation_textview_style"
+                            android:gravity="left"
+                            android:text="12345671111" />
+                    </TableRow>
+
+                    <TableRow
+                        android:id="@+id/tableRow2"
+                        style="@style/confirmation_tablerow_style" >
+
+                        <TextView
+                            style="@style/confirmation_textview_style"
+                            android:text="@string/account_no" />
+
+                        <TextView
+                            android:id="@+id/account_no_value"
+                            style="@style/confirmation_textview_style"
+                            android:gravity="left"
+                            android:text="3333333333" />
+                    </TableRow>
+
+                    <TableRow
+                        android:id="@+id/tableRow3"
+                        style="@style/confirmation_tablerow_style" >
+
+                        <TextView
+                            style="@style/confirmation_textview_style"
+                            android:text="@string/title" />
+
+                        <TextView
+                            android:id="@+id/title_value"
+                            style="@style/confirmation_textview_style"
+                            android:gravity="left"
+                            android:text="Mr." />
+                    </TableRow>
+
+                    <TableRow
+                        android:id="@+id/tableRow5"
+                        style="@style/confirmation_tablerow_style" >
+
+                        <TextView
+                            style="@style/confirmation_textview_style"
+                            android:text="@string/surname" />
+
+                        <TextView
+                            android:id="@+id/surname_value"
+                            style="@style/confirmation_textview_style"
+                            android:gravity="left"
+                            android:text="Mohammed" />
+                    </TableRow>
+
+                    <TableRow
+                        android:id="@+id/tableRow6"
+                        style="@style/confirmation_tablerow_style" >
+
+                        <TextView
+                            style="@style/confirmation_textview_style"
+                            android:text="@string/first_name" />
+
+                        <TextView
+                            android:id="@+id/first_name_value"
+                            style="@style/confirmation_textview_style"
+                            android:gravity="left"
+                            android:text="Lee" />
+                    </TableRow>
+
+                    <TableRow
+                        android:id="@+id/tableRow7"
+                        style="@style/confirmation_tablerow_style" >
+
+                        <TextView
+                            style="@style/confirmation_textview_style"
+                            android:text="@string/middle_name" />
+
+                        <TextView
+                            android:id="@+id/middle_name_value"
+                            style="@style/confirmation_textview_style"
+                            android:gravity="left"
+                            android:text="" />
+                    </TableRow>
+
+                    <TableRow
+                        android:id="@+id/tableRow4"
+                        style="@style/confirmation_tablerow_style" >
+
+                        <TextView
+                            style="@style/confirmation_textview_style"
+                            android:text="@string/date_of_birth" />
+
+                        <TextView
+                            android:id="@+id/date_of_birth_value"
+                            style="@style/confirmation_textview_style"
+                            android:gravity="left"
+                            android:text="01-01-1987" />
+                    </TableRow>
+
+                    <TableRow
+                        android:id="@+id/placeOfBirthRow"
+                        style="@style/confirmation_tablerow_style" >
+
+                        <TextView
+                            style="@style/confirmation_textview_style"
+                            android:text="@string/place_of_birth" />
+
+                        <TextView
+                            android:id="@+id/place_of_birth_value"
+                            style="@style/confirmation_textview_style"
+                            android:gravity="left"
+                            android:text="" />
+                    </TableRow>
+
+                    <TableRow
+                        android:id="@+id/pdNationalityRow"
+                        style="@style/confirmation_tablerow_style" >
+
+                        <TextView
+                            style="@style/confirmation_textview_style"
+                            android:text="@string/nationality" />
+
+                        <TextView
+                            android:id="@+id/nationality_value"
+                            style="@style/confirmation_textview_style"
+                            android:gravity="left"
+                            android:text="" />
+                    </TableRow>
+
+                    <TableRow
+                        android:id="@+id/tableRow8"
+                        style="@style/confirmation_tablerow_style" >
+
+                        <TextView
+                            style="@style/confirmation_textview_style"
+                            android:text="@string/marital_status" />
+
+                        <TextView
+                            android:id="@+id/marital_status_value"
+                            style="@style/confirmation_textview_style"
+                            android:gravity="left"
+                            android:text="Single" />
+                    </TableRow>
+
+                    <TableRow
+                        android:id="@+id/tableRow9"
+                        style="@style/confirmation_tablerow_style" >
+
+                        <TextView
+                            style="@style/confirmation_textview_style"
+                            android:text="@string/sex" />
+
+                        <TextView
+                            android:id="@+id/sex_value"
+                            style="@style/confirmation_textview_style"
+                            android:gravity="left"
+                            android:text="Male" />
+                    </TableRow>
+
+                    <TableRow
+                        android:id="@+id/tableRow10"
+                        style="@style/confirmation_tablerow_style" >
+
+                        <TextView
+                            style="@style/confirmation_textview_style"
+                            android:text="@string/state_of_origin" />
+
+                        <TextView
+                            android:id="@+id/state_of_origin_value"
+                            style="@style/confirmation_textview_style"
+                            android:gravity="left"
+                            android:text="Kogi" />
+                    </TableRow>
+
+                    <TableRow
+                        android:id="@+id/tableRow11"
+                        style="@style/confirmation_tablerow_style" >
+
+                        <TextView
+                            style="@style/confirmation_textview_style"
+                            android:text="@string/lga_of_origin" />
+
+                        <TextView
+                            android:id="@+id/lga_of_origin_value"
+                            style="@style/confirmation_textview_style"
+                            android:gravity="left"
+                            android:text="Dekina" />
+                    </TableRow>
+
+                    <TableRow
+                        android:id="@+id/tableRow12"
+                        style="@style/confirmation_tablerow_style" >
+
+                        <TextView
+                            style="@style/confirmation_textview_style"
+                            android:text="@string/email" />
+
+                        <TextView
+                            android:id="@+id/pd_email_value"
+                            style="@style/confirmation_textview_style"
+                            android:gravity="left"
+                            android:text="email3@emailhost.com" />
+                    </TableRow>
+
+                    <TableRow
+                        android:id="@+id/tableRow13"
+                        style="@style/confirmation_tablerow_style" >
+
+                        <TextView
+                            style="@style/confirmation_textview_style"
+                            android:text="@string/tel_1" />
+
+                        <TextView
+                            android:id="@+id/tel_l_value"
+                            style="@style/confirmation_textview_style"
+                            android:gravity="left"
+                            android:text="+2348123456791" />
+                    </TableRow>
+
+                    <TableRow
+                        android:id="@+id/tableRow14"
+                        style="@style/confirmation_tablerow_style" >
+
+                        <TextView
+                            style="@style/confirmation_textview_style"
+                            android:text="@string/tel_2" />
+
+                        <TextView
+                            android:id="@+id/tel_2_value"
+                            style="@style/confirmation_textview_style"
+                            android:gravity="left"
+                            android:text="+2348123456788" />
+                    </TableRow>
+
+                    <TableRow
+                        android:id="@+id/tableRow15"
+                        style="@style/confirmation_tablerow_style" >
+
+                        <TextView
+                            style="@style/confirmation_textview_style"
+                            android:text="@string/present_address" />
+
+                        <TextView
+                            android:id="@+id/present_address_value"
+                            style="@style/confirmation_textview_style"
+                            android:gravity="left"
+                            android:text="" />
+                    </TableRow>
+
+                    <TableRow
+                        android:id="@+id/tableRow16"
+                        style="@style/confirmation_tablerow_style" >
+
+                        <TextView
+                            style="@style/confirmation_textview_style"
+                            android:text="@string/permanent_home_address" />
+
+                        <TextView
+                            android:id="@+id/permanent_home_address_value"
+                            style="@style/confirmation_textview_style"
+                            android:gravity="left"
+                            android:text="" />
+                    </TableRow>
+                    <!--  -->
+
+                    <TableRow
+                        android:id="@+id/tableRow190"
+                        style="@style/confirmation_tablerow_style" >
+
+                        <TextView
+                            style="@style/confirmation_textview_style"
+                            android:text="@string/state" />
+
+                        <TextView
+                            android:id="@+id/state_of_permanent_address_value"
+                            style="@style/confirmation_textview_style"
+                            android:gravity="left"
+                            android:text="" />
+                    </TableRow>
+
+                    <TableRow
+                        android:id="@+id/tableRow110"
+                        style="@style/confirmation_tablerow_style" >
+
+                        <TextView
+                            style="@style/confirmation_textview_style"
+                            android:text="@string/lga" />
+
+                        <TextView
+                            android:id="@+id/lga_of_permanent_address_value"
+                            style="@style/confirmation_textview_style"
+                            android:gravity="left"
+                            android:text="Kaduna south" />
+                    </TableRow>
+
+                    <TableRow
+                        android:id="@+id/tableRow17"
+                        style="@style/confirmation_tablerow_style" >
+
+                        <TextView
+                            style="@style/confirmation_textview_style"
+                            android:text="@string/current_contact_address_1" />
+
+                        <TextView
+                            android:id="@+id/current_contact_address_1_value"
+                            style="@style/confirmation_textview_style"
+                            android:gravity="left"
+                            android:text="" />
+                    </TableRow>
+
+                    <TableRow
+                        android:id="@+id/tableRow18"
+                        style="@style/confirmation_tablerow_style" >
+
+                        <TextView
+                            style="@style/confirmation_textview_style"
+                            android:text="@string/current_contact_address_2" />
+
+                        <TextView
+                            android:id="@+id/current_contact_address_2_value"
+                            style="@style/confirmation_textview_style"
+                            android:gravity="left"
+                            android:text="" />
+                    </TableRow>
+
+                    <TableRow
+                        android:id="@+id/tableRow19"
+                        style="@style/confirmation_tablerow_style" >
+
+                        <TextView
+                            style="@style/confirmation_textview_style"
+                            android:text="@string/state" />
+
+                        <TextView
+                            android:id="@+id/state_value"
+                            style="@style/confirmation_textview_style"
+                            android:gravity="left"
+                            android:text="Kaduna" />
+                    </TableRow>
+
+                    <TableRow
+                        android:id="@+id/tableRow20"
+                        style="@style/confirmation_tablerow_style" >
+
+                        <TextView
+                            style="@style/confirmation_textview_style"
+                            android:text="@string/lga" />
+
+                        <TextView
+                            android:id="@+id/lga_value"
+                            style="@style/confirmation_textview_style"
+                            android:gravity="left"
+                            android:text="Kaduna south" />
+                    </TableRow>
+
+                    <!-- next of kin data starts here -->
+
+                    <TextView
+                        style="@style/confirmation_textview_style"
+                        android:layout_width="match_parent"
+                        android:layout_gravity="right"
+                        android:layout_marginTop="20dp"
+                        android:gravity="center"
+                        android:text="Next of kin data"
+                        android:textColor="@color/dark_blue_color"
+                        android:textStyle="bold" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="3dp"
+                        android:layout_marginBottom="20dp"
+                        android:background="#000" />
+
+                    <TableRow
+                        android:id="@+id/tableRow22"
+                        style="@style/confirmation_tablerow_style" >
+
+                        <TextView
+                            style="@style/confirmation_textview_style"
+                            android:text="Title:" />
+
+                        <TextView
+                            android:id="@+id/nok_title_value"
+                            style="@style/confirmation_textview_style"
+                            android:gravity="left"
+                            android:text="" />
+                    </TableRow>
+
+                    <TableRow
+                        android:id="@+id/tableRow23"
+                        style="@style/confirmation_tablerow_style" >
+
+                        <TextView
+                            style="@style/confirmation_textview_style"
+                            android:text="Relationship:" />
+
+                        <TextView
+                            android:id="@+id/nok_relationship_value"
+                            style="@style/confirmation_textview_style"
+                            android:gravity="left"
+                            android:text="" />
+                    </TableRow>
+
+                    <TableRow
+                        android:id="@+id/tableRow24"
+                        style="@style/confirmation_tablerow_style" >
+
+                        <TextView
+                            style="@style/confirmation_textview_style"
+                            android:text="Sex:" />
+
+                        <TextView
+                            android:id="@+id/nok_sex_value"
+                            style="@style/confirmation_textview_style"
+                            android:gravity="left"
+                            android:text="" />
+                    </TableRow>
+
+                    <TableRow
+                        android:id="@+id/tableRow25"
+                        style="@style/confirmation_tablerow_style" >
+
+                        <TextView
+                            style="@style/confirmation_textview_style"
+                            android:text="Phone no:" />
+
+                        <TextView
+                            android:id="@+id/nok_phone_no_value"
+                            style="@style/confirmation_textview_style"
+                            android:gravity="left"
+                            android:text="" />
+                    </TableRow>
+
+                    <TableRow
+                        android:id="@+id/tableRow26"
+                        style="@style/confirmation_tablerow_style" >
+
+                        <TextView
+                            style="@style/confirmation_textview_style"
+                            android:text="Date of birth:" />
+
+                        <TextView
+                            android:id="@+id/nok_date_of_birth_value"
+                            style="@style/confirmation_textview_style"
+                            android:gravity="left"
+                            android:text="" />
+                    </TableRow>
+
+                    <TableRow
+                        android:id="@+id/tableRow27"
+                        style="@style/confirmation_tablerow_style" >
+
+                        <TextView
+                            style="@style/confirmation_textview_style"
+                            android:text="Surname:" />
+
+                        <TextView
+                            android:id="@+id/nok_surname_value"
+                            style="@style/confirmation_textview_style"
+                            android:gravity="left"
+                            android:text="" />
+                    </TableRow>
+
+                    <TableRow
+                        android:id="@+id/tableRow28"
+                        style="@style/confirmation_tablerow_style" >
+
+                        <TextView
+                            style="@style/confirmation_textview_style"
+                            android:text="First name:" />
+
+                        <TextView
+                            android:id="@+id/nok_first_name_value"
+                            style="@style/confirmation_textview_style"
+                            android:gravity="left"
+                            android:text="" />
+                    </TableRow>
+
+                    <TableRow
+                        android:id="@+id/tableRow29"
+                        style="@style/confirmation_tablerow_style" >
+
+                        <TextView
+                            style="@style/confirmation_textview_style"
+                            android:text="Middle name:" />
+
+                        <TextView
+                            android:id="@+id/nok_middle_name_value"
+                            style="@style/confirmation_textview_style"
+                            android:gravity="left"
+                            android:text="" />
+                    </TableRow>
+
+                    <TableRow
+                        android:id="@+id/tableRow30"
+                        style="@style/confirmation_tablerow_style" >
+
+                        <TextView
+                            style="@style/confirmation_textview_style"
+                            android:text="Email:" />
+
+                        <TextView
+                            android:id="@+id/nok_email_value"
+                            style="@style/confirmation_textview_style"
+                            android:gravity="left"
+                            android:text="" />
+                    </TableRow>
+
+                    <TableRow
+                        android:id="@+id/tableRow31"
+                        style="@style/confirmation_tablerow_style" >
+
+                        <TextView
+                            style="@style/confirmation_textview_style"
+                            android:text="Contact address 1:" />
+
+                        <TextView
+                            android:id="@+id/nok_contact_address_pobox_1_value"
+                            style="@style/confirmation_textview_style"
+                            android:gravity="left"
+                            android:text="" />
+                    </TableRow>
+
+                    <TableRow
+                        android:id="@+id/tableRow32"
+                        style="@style/confirmation_tablerow_style" >
+
+                        <TextView
+                            style="@style/confirmation_textview_style"
+                            android:text="Contact address 2:" />
+
+                        <TextView
+                            android:id="@+id/nok_contact_address_pobox_2_value"
+                            style="@style/confirmation_textview_style"
+                            android:gravity="left"
+                            android:text="" />
+                    </TableRow>
+
+                    <TableRow
+                        android:id="@+id/tableRow33"
+                        style="@style/confirmation_tablerow_style" >
+
+                        <TextView
+                            style="@style/confirmation_textview_style"
+                            android:text="Country:" />
+
+                        <TextView
+                            android:id="@+id/nok_country_value"
+                            style="@style/confirmation_textview_style"
+                            android:gravity="left"
+                            android:text="Nigeria" />
+                    </TableRow>
+
+                    <TableRow
+                        android:id="@+id/tableRow1000"
+                        style="@style/confirmation_tablerow_style" >
+
+                        <TextView
+                            style="@style/confirmation_textview_style"
+                            android:text="State of origin:" />
+
+                        <TextView
+                            android:id="@+id/nok_state_value"
+                            style="@style/confirmation_textview_style"
+                            android:gravity="left"
+                            android:text="" />
+                    </TableRow>
+
+                    <TableRow
+                        android:id="@+id/tableRow1001"
+                        style="@style/confirmation_tablerow_style" >
+
+                        <TextView
+                            style="@style/confirmation_textview_style"
+                            android:text="LGA:" />
+
+                        <TextView
+                            android:id="@+id/nok_lga_value"
+                            style="@style/confirmation_textview_style"
+                            android:gravity="left"
+                            android:text="" />
+                    </TableRow>
+
+                    <!-- Employer data starts here -->
+
+                    <TextView
+                        style="@style/confirmation_textview_style"
+                        android:layout_width="match_parent"
+                        android:layout_gravity="right"
+                        android:layout_marginTop="20dp"
+                        android:gravity="center"
+                        android:text="Employer data"
+                        android:textColor="@color/dark_blue_color"
+                        android:textStyle="bold" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="3dp"
+                        android:layout_marginBottom="20dp"
+                        android:background="#000" />
+
+                    <TableRow
+                        android:id="@+id/tableRow35"
+                        style="@style/confirmation_tablerow_style" >
+
+                        <TextView
+                            style="@style/confirmation_textview_style"
+                            android:text="Employer code:" />
+
+                        <TextView
+                            android:id="@+id/ed_employer_code_value"
+                            style="@style/confirmation_textview_style"
+                            android:gravity="left"
+                            android:text="" />
+                    </TableRow>
+
+                    <TableRow
+                        android:id="@+id/tableRow36"
+                        style="@style/confirmation_tablerow_style" >
+
+                        <TextView
+                            style="@style/confirmation_textview_style"
+                            android:text="Name of organization:" />
+
+                        <TextView
+                            android:id="@+id/ed_name_of_organization_value"
+                            style="@style/confirmation_textview_style"
+                            android:gravity="left"
+                            android:text="" />
+                    </TableRow>
+
+                    <TableRow
+                        android:id="@+id/tableRow37"
+                        style="@style/confirmation_tablerow_style" >
+
+                        <TextView
+                            style="@style/confirmation_textview_style"
+                            android:text="Office address 1:" />
+
+                        <TextView
+                            android:id="@+id/ed_office_address_1_value"
+                            style="@style/confirmation_textview_style"
+                            android:gravity="left"
+                            android:text="" />
+                    </TableRow>
+
+                    <TableRow
+                        android:id="@+id/tableRow38"
+                        style="@style/confirmation_tablerow_style" >
+
+                        <TextView
+                            style="@style/confirmation_textview_style"
+                            android:text="Office address 2:" />
+
+                        <TextView
+                            android:id="@+id/ed_office_address_2_value"
+                            style="@style/confirmation_textview_style"
+                            android:gravity="left"
+                            android:text="" />
+                    </TableRow>
+
+                    <TableRow
+                        android:id="@+id/tableRow39"
+                        style="@style/confirmation_tablerow_style" >
+
+                        <TextView
+                            style="@style/confirmation_textview_style"
+                            android:text="State:" />
+
+                        <TextView
+                            android:id="@+id/ed_state_value"
+                            style="@style/confirmation_textview_style"
+                            android:gravity="left"
+                            android:text="" />
+                    </TableRow>
+
+                    <TableRow
+                        android:id="@+id/tableRow40"
+                        style="@style/confirmation_tablerow_style" >
+
+                        <TextView
+                            style="@style/confirmation_textview_style"
+                            android:text="LGA:" />
+
+                        <TextView
+                            android:id="@+id/ed_lga_value"
+                            style="@style/confirmation_textview_style"
+                            android:gravity="left"
+                            android:text="" />
+                    </TableRow>
+
+                    <TableRow
+                        android:id="@+id/professionRow"
+                        style="@style/confirmation_tablerow_style" >
+
+                        <TextView
+                            style="@style/confirmation_textview_style"
+                            android:text="Profession:" />
+
+                        <TextView
+                            android:id="@+id/ed_profession_value"
+                            style="@style/confirmation_textview_style"
+                            android:gravity="left"
+                            android:text="" />
+                    </TableRow>
+
+                    <TableRow
+                        android:id="@+id/tableRow41"
+                        style="@style/confirmation_tablerow_style" >
+
+                        <TextView
+                            style="@style/confirmation_textview_style"
+                            android:text="Phone:" />
+
+                        <TextView
+                            android:id="@+id/ed_phone_no_value"
+                            style="@style/confirmation_textview_style"
+                            android:gravity="left"
+                            android:text="" />
+                    </TableRow>
+
+                    <TableRow
+                        android:id="@+id/tableRow42"
+                        style="@style/confirmation_tablerow_style" >
+
+                        <TextView
+                            style="@style/confirmation_textview_style"
+                            android:text="File id no:" />
+
+                        <TextView
+                            android:id="@+id/ed_file_id_no_value"
+                            style="@style/confirmation_textview_style"
+                            android:gravity="left"
+                            android:text="" />
+                    </TableRow>
+
+                    <TableRow
+                        android:id="@+id/tableRow43"
+                        style="@style/confirmation_tablerow_style" >
+
+                        <TextView
+                            style="@style/confirmation_textview_style"
+                            android:text="Designation:" />
+
+                        <TextView
+                            android:id="@+id/ed_designation_value"
+                            style="@style/confirmation_textview_style"
+                            android:gravity="left"
+                            android:text="" />
+                    </TableRow>
+
+                    <TableRow
+                        android:id="@+id/tableRow44"
+                        style="@style/confirmation_tablerow_style" >
+
+                        <TextView
+                            style="@style/confirmation_textview_style"
+                            android:text="Date of first employment:" />
+
+                        <TextView
+                            android:id="@+id/ed_dofe_value"
+                            style="@style/confirmation_textview_style"
+                            android:gravity="left"
+                            android:text="" />
+                    </TableRow>
+
+                    <TableRow
+                        android:id="@+id/tableRow45"
+                        style="@style/confirmation_tablerow_style" >
+
+                        <TextView
+                            style="@style/confirmation_textview_style"
+                            android:text="Date of confirmation:" />
+
+                        <TextView
+                            android:id="@+id/ed_doc_value"
+                            style="@style/confirmation_textview_style"
+                            android:gravity="left"
+                            android:text="" />
+                    </TableRow>
+
+                    <TableRow
+                        android:id="@+id/tableRow46"
+                        style="@style/confirmation_tablerow_style" >
+
+                        <TextView
+                            style="@style/confirmation_textview_style"
+                            android:text="Branch/location of posting:" />
+
+                        <TextView
+                            android:id="@+id/ed_bolop_value"
+                            style="@style/confirmation_textview_style"
+                            android:gravity="left"
+                            android:text="" />
+                    </TableRow>
+
+                    <TableRow
+                        android:id="@+id/tableRow47"
+                        style="@style/confirmation_tablerow_style" >
+
+                        <TextView
+                            style="@style/confirmation_textview_style"
+                            android:text="Email:" />
+
+                        <TextView
+                            android:id="@+id/ed_email_value"
+                            style="@style/confirmation_textview_style"
+                            android:gravity="left"
+                            android:text="" />
+                    </TableRow>
+
+                    <TableRow
+                        android:id="@+id/tableRow48"
+                        style="@style/confirmation_tablerow_style" >
+
+                        <TextView
+                            style="@style/confirmation_textview_style"
+                            android:text="Private/public:" />
+
+                        <TextView
+                            android:id="@+id/private_public_value"
+                            style="@style/confirmation_textview_style"
+                            android:gravity="left"
+                            android:text="" />
+                    </TableRow>
+
+                    <TableRow
+                        android:id="@+id/tableRow49"
+                        style="@style/confirmation_tablerow_style" >
+
+                        <TextView
+                            style="@style/confirmation_textview_style"
+                            android:text="Sector:" />
+
+                        <TextView
+                            android:id="@+id/ed_sector2_value"
+                            style="@style/confirmation_textview_style"
+                            android:gravity="left"
+                            android:text="" />
+                    </TableRow>
+
+                    <!-- Beginning od contribution -->
+
+                    <TextView
+                        style="@style/confirmation_textview_style"
+                        android:layout_width="match_parent"
+                        android:layout_gravity="right"
+                        android:layout_marginTop="20dp"
+                        android:gravity="center"
+                        android:text="Contribution"
+                        android:textColor="@color/dark_blue_color"
+                        android:textStyle="bold" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="3dp"
+                        android:layout_marginBottom="20dp"
+                        android:background="#000" />
+
+                    <TableRow
+                        android:id="@+id/tableRow50"
+                        style="@style/confirmation_tablerow_style" >
+
+                        <TextView
+                            style="@style/confirmation_textview_style"
+                            android:text="Form reference no:" />
+
+                        <TextView
+                            android:id="@+id/c_form_reference_no_value"
+                            style="@style/confirmation_textview_style"
+                            android:gravity="left"
+                            android:text="" />
+                    </TableRow>
+
+                    <TableRow
+                        android:id="@+id/tableRow51"
+                        style="@style/confirmation_tablerow_style" >
+
+                        <TextView
+                            style="@style/confirmation_textview_style"
+                            android:text="Employer type:" />
+
+                        <TextView
+                            android:id="@+id/c_employer_type_value"
+                            style="@style/confirmation_textview_style"
+                            android:gravity="left"
+                            android:text="" />
+                    </TableRow>
+
+                    <TableRow
+                        android:id="@+id/tableRow52"
+                        style="@style/confirmation_tablerow_style" >
+
+                        <TextView
+                            style="@style/confirmation_textview_style"
+                            android:text="Employer contribution:" />
+
+                        <TextView
+                            android:id="@+id/c_employer_contribution_value"
+                            style="@style/confirmation_textview_style"
+                            android:gravity="left"
+                            android:text="" />
+                    </TableRow>
+
+                    <TableRow
+                        android:id="@+id/tableRow53"
+                        style="@style/confirmation_tablerow_style" >
+
+                        <TextView
+                            style="@style/confirmation_textview_style"
+                            android:text="Salary grade:" />
+
+                        <TextView
+                            android:id="@+id/c_salary_grade_value"
+                            style="@style/confirmation_textview_style"
+                            android:gravity="left"
+                            android:text="" />
+                    </TableRow>
+
+                    <TableRow
+                        android:id="@+id/tableRow54"
+                        style="@style/confirmation_tablerow_style" >
+
+                        <TextView
+                            style="@style/confirmation_textview_style"
+                            android:text="Salary step:" />
+
+                        <TextView
+                            android:id="@+id/c_salary_step_value"
+                            style="@style/confirmation_textview_style"
+                            android:gravity="left"
+                            android:text="" />
+                    </TableRow>
+
+                    <TableRow
+                        android:id="@+id/tableRow565"
+                        style="@style/confirmation_tablerow_style" >
+
+                        <TextView
+                            style="@style/confirmation_textview_style"
+                            android:text="Salary structure:" />
+
+                        <TextView
+                            android:id="@+id/c_salary_structure_value"
+                            style="@style/confirmation_textview_style"
+                            android:gravity="left"
+                            android:text="" />
+                    </TableRow>
+
+                    <TableRow
+                        android:id="@+id/tableRow56"
+                        style="@style/confirmation_tablerow_style" >
+
+                        <TextView
+                            style="@style/confirmation_textview_style"
+                            android:text="Annual basic salary:" />
+
+                        <TextView
+                            android:id="@+id/c_annual_basic_salary_value"
+                            style="@style/confirmation_textview_style"
+                            android:gravity="left"
+                            android:text="" />
+                    </TableRow>
+
+                    <TableRow
+                        android:id="@+id/tableRow57"
+                        style="@style/confirmation_tablerow_style" >
+
+                        <TextView
+                            style="@style/confirmation_textview_style"
+                            android:text="Annual transport:" />
+
+                        <TextView
+                            android:id="@+id/c_annual_transport_value"
+                            style="@style/confirmation_textview_style"
+                            android:gravity="left"
+                            android:text="" />
+                    </TableRow>
+
+                    <TableRow
+                        android:id="@+id/tableRow58"
+                        style="@style/confirmation_tablerow_style" >
+
+                        <TextView
+                            style="@style/confirmation_textview_style"
+                            android:text="Annual rent:" />
+
+                        <TextView
+                            android:id="@+id/c_annual_rent_value"
+                            style="@style/confirmation_textview_style"
+                            android:gravity="left"
+                            android:text="" />
+                    </TableRow>
+
+                    <TableRow
+                        android:id="@+id/tableRow59"
+                        style="@style/confirmation_tablerow_style" >
+
+                        <TextView
+                            style="@style/confirmation_textview_style"
+                            android:text="Annual other pensionable:" />
+
+                        <TextView
+                            android:id="@+id/c_annual_other_pensionable_value"
+                            style="@style/confirmation_textview_style"
+                            android:gravity="left"
+                            android:text="" />
+                    </TableRow>
+
+                    <TableRow
+                        android:id="@+id/tableRow60"
+                        style="@style/confirmation_tablerow_style" >
+
+                        <TextView
+                            style="@style/confirmation_textview_style"
+                            android:text="Employee contribution:" />
+
+                        <TextView
+                            android:id="@+id/c_employee_contribution_value"
+                            style="@style/confirmation_textview_style"
+                            android:gravity="left"
+                            android:text="" />
+                    </TableRow>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="3dp"
+                        android:layout_marginTop="20dp"
+                        android:background="@color/dark_blue_color" />
+
+                    <LinearLayout
+                        android:id="@+id/navButtonsLL"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginBottom="30dp"
+                        android:layout_marginTop="30dp"
+                        android:gravity="center"
+                        android:orientation="horizontal"
+                        android:padding="20dp" >
+
+                        <Button
+                            android:id="@+id/review"
+                            style="@style/buttons_style"
+                            android:layout_marginRight="20dp"
+                            android:text="@string/back" />
+
+                        <Button
+                            android:id="@+id/bSave"
+                            style="@style/buttons_style"
+                            android:layout_width="wrap_content"
+                            android:layout_marginLeft="20dp"
+                            android:text="@string/send" />
+                    </LinearLayout>
+                </TableLayout>
+            </ScrollView>
+            <!--
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" >
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:layout_alignParentTop="true"
+                    android:adjustViewBounds="true"
+                    android:src="@drawable/top_shadow" />
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:layout_alignParentBottom="true"
+                    android:adjustViewBounds="true"
+                    android:src="@drawable/bottom_shadow" />
+            </RelativeLayout>
+            -->
+        </FrameLayout>
+    </LinearLayout>
+
+</LinearLayout>

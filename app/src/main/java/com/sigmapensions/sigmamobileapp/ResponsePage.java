@@ -24,6 +24,7 @@ import android.graphics.drawable.Drawable;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.Handler;
+import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -46,7 +47,7 @@ import com.sigmapensions.sigmamobileapp.utils.WelcomeLetterPDF;
 import com.itextpdf.text.BadElementException;
 import com.itextpdf.text.Image;
 
-public class ResponsePage extends Activity {
+public class ResponsePage extends AppCompatActivity {
 
 	private String[] responseList = {"New Response", "View all contributors", "Register new contributor", "Exit"};
 	ListView responseLV;
@@ -99,11 +100,14 @@ public class ResponsePage extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.response_page_activity);
 
+
 		pdPrefs = CommonOps.getPdPrefs(this);
 		nokPrefs = CommonOps.getNOKPrefs(this);
 		edPrefs = CommonOps.getEdPrefs(this);
 		bPrefs = CommonOps.getbPrefs(this);
 		pinDetailsPrefs = CommonOps.getPinDetailsPrefs(this);
+
+		setContributorDetails();
 
 		responseLV = (ListView)findViewById(R.id.response_list);
 		adapter = new ArrayAdapter<String>(ResponsePage.this, R.layout.left_list_layout, responseList);
@@ -392,10 +396,13 @@ public class ResponsePage extends Activity {
 			setContributorDetails();
 			
 			username = "mosesocho@gmail.com";
-			apikey = "a00d00c0f1819edf7e533cb1b648ad3b0d122698";
+			apikey = "303082fdcbf64d8e72fcb2513bf33d60dc12fdb2";
 			sendername = "SPensions";
-			message = "Welcome, you have been registered! \nThese are your details: \nbla bla bla...";
-			recipients[0] = contributorPhone;//Normally, we'll send this from the shared preferences phone1
+			message = "Congratulations, you have been registered! \n" +
+					"\nRSA Pin: " + rsaPin + "\n" +
+					"\nWelcome to the Sigma Pensions family."
+			;
+			recipients[0] = contributorPhone;//Normally, we'll send this to the shared preferences phone1
 		}
 
 
@@ -414,7 +421,7 @@ public class ResponsePage extends Activity {
 			}else{
 				sentMessage = false;
 				Toast.makeText(ResponsePage.this, "Message sending failed", Toast.LENGTH_LONG).show();
-
+                Log.e("MobileReg", "Response gotten from ebulkSMS: " + result);
 			}
 			Log.e("The PostXML response", result);
 		}

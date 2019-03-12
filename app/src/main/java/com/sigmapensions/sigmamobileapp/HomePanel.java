@@ -4,7 +4,9 @@ import com.sigmapensions.sigmamobileapp.utils.CommonOps;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.AdapterView;
@@ -16,7 +18,7 @@ import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.TextView;
 
-public class HomePanel extends Activity{
+public class HomePanel extends AppCompatActivity {
 
 	String[] listItems = {"Register new contributor","Change password", "View all records", 
 	"Upload records", "Exit"};
@@ -93,6 +95,7 @@ public class HomePanel extends Activity{
 					startActivity(registerIntent);
 					CommonOps.enterFromRight(HomePanel.this);
 					finish();
+					//Normally, I would clear shared preferences
 				}else if(listItems[position] == "Exit"){
 					CommonOps.exitApp(HomePanel.this, CommonOps.editor);
 				}
